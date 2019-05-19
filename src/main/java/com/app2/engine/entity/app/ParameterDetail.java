@@ -23,8 +23,8 @@ public class ParameterDetail extends BaseEntity {
 
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "appParameter")
-    private AppParameter appParameter;
+    @JoinColumn(name = "parameterHeader")
+    private ParameterHeader parameterHeader;
 
     /**
      */

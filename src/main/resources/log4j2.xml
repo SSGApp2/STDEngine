@@ -22,7 +22,7 @@
 
 
         <!-- Log SQL statements -->
-        <Logger name="org.hibernate.SQL" level="off" additivity="false">
+        <Logger name="org.hibernate.SQL" level="error" additivity="false">
             <AppenderRef ref="Console" />
             <AppenderRef ref="File" />
         </Logger>
@@ -32,7 +32,6 @@
             <AppenderRef ref="Console" />
             <AppenderRef ref="File" />
         </Logger>
-
 
         <Root level="error">
             <AppenderRef ref="Console" />
