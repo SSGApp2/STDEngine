@@ -14,9 +14,9 @@ import javax.validation.constraints.NotNull;
 @Data
 @Entity
 @Immutable
-@Table(name = "V_IOT_SENSOR_RANGE")
+@Table(name = "v_iot_sensor_range")
 @EqualsAndHashCode(of = {"id"})
-public class IotSensorRange {
+public class IotSensorRangeView {
 
     @Id
     @Column(updatable = false, nullable = false)

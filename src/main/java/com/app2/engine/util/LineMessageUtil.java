@@ -1,6 +1,6 @@
 package com.app2.engine.util;
 
-import com.app2.engine.entity.vcc.iot.IotSensorRange;
+import com.app2.engine.entity.vcc.iot.IotSensorRangeView;
 
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
@@ -14,7 +14,7 @@ public class LineMessageUtil {
 //    String imageDanger = "/usr/local/VCC/images/danger1.jpg";
 //    String imageWarning = "/usr/local/VCC/images/warning1.png";
 //
-    public static String toMessage(IotSensorRange iotSensorRange, String status, Double currentValue) {
+    public static String toMessage(IotSensorRangeView iotSensorRange, String status, Double currentValue) {
         SimpleDateFormat dt = new SimpleDateFormat("yyyyy-mm-dd hh:mm:ss");
         StringBuilder stringBuilder = new StringBuilder();
         String imagePath = null;
@@ -22,7 +22,7 @@ public class LineMessageUtil {
         String unit = "";
 //        String unit = SensorValueCurrent.getUnit(sensorCode);
         String currentDate = dt.format(new Date());
-        currentDate = "";//not show
+//        currentDate = "";//not show
         if (status.contains("danger")) {
 //            imagePath = imageDanger;
             stringBuilder.append("Danger " + currentDate + "\n");
@@ -42,7 +42,7 @@ public class LineMessageUtil {
         return stringBuilder.toString();
     }
 
-    public static String toMessageCombine(IotSensorRange iotSensorRange, String status, Double currentValue) {
+    public static String toMessageCombine(IotSensorRangeView iotSensorRange, String status, Double currentValue) {
         SimpleDateFormat dt = new SimpleDateFormat("yyyyy-mm-dd hh:mm:ss");
         StringBuilder stringBuilder = new StringBuilder();
         String imagePath = null;

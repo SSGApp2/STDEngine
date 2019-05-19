@@ -4,11 +4,10 @@ import com.app2.engine.Service.SensorRange.SensorRangeService;
 import com.app2.engine.Service.linenotify.LineNotifyService;
 import com.app2.engine.constant.ServerConstant;
 import com.app2.engine.entity.model.MainSensorModel;
-import com.app2.engine.entity.vcc.iot.IotSensorRange;
+import com.app2.engine.entity.vcc.iot.IotSensorRangeView;
 import com.app2.engine.entity.vcc.iot.IotSensorRangeLog;
 import com.app2.engine.repository.IotSensorRangeLogRepository;
 import com.app2.engine.repository.IotSensorRangeRepository;
-import com.app2.engine.repository.custom.ParameterDetailRepositoryCustom;
 import com.app2.engine.util.BeanUtils;
 import com.app2.engine.util.LineMessageUtil;
 import com.google.gson.Gson;
@@ -20,13 +19,10 @@ import org.springframework.messaging.simp.stomp.StompCommand;
 import org.springframework.messaging.simp.stomp.StompHeaders;
 import org.springframework.messaging.simp.stomp.StompSession;
 import org.springframework.messaging.simp.stomp.StompSessionHandlerAdapter;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.concurrent.ListenableFutureCallback;
 import org.springframework.web.socket.messaging.WebSocketStompClient;
 
-import javax.annotation.PostConstruct;
 import java.lang.reflect.Type;
 import java.util.Date;
 import java.util.HashMap;
@@ -53,7 +49,8 @@ public class SensorAlertJob {
 
     public void startJob() {
         //initial
-        stompClient.connect("ws://" + ServerConstant.WebSockerServer + "/ws", new StompSessionHandlerAdapter() {
+        String socketURL=ServerConstant.WebSockerServer.replace("http://", "");
+        stompClient.connect("ws://" + socketURL + "/ws", new StompSessionHandlerAdapter() {
             @Override
             public void afterConnected(StompSession session, StompHeaders connectedHeaders) {
                 session.setAutoReceipt(true);
@@ -92,7 +89,7 @@ public class SensorAlertJob {
                 String deviceCode = mainSensorModel.getDeviceName();
                 String ouCode = mainSensorModel.getOuCode();
                 Gson gson = new Gson();
-                for (IotSensorRange iotSensorRange : iotSensorRangeRepository.findByDeviceCodeAndOuCode(deviceCode, ouCode)) {
+                for (IotSensorRangeView iotSensorRange : iotSensorRangeRepository.findByDeviceCodeAndOuCode(deviceCode, ouCode)) {
                     Long id = iotSensorRange.getId();
                     String sensorCode = iotSensorRange.getSensorCode();
                     String sensorStatus = mainSensorModel.getStatusBySensorCode(sensorCode);

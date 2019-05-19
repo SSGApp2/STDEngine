@@ -1,75 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/main/java/com/app2/engine/job/SensorAlertRepeatJob.java" line="95" mnemonic="2" />
-    <bookmark url="file://$PROJECT_DIR$/src/main/java/com/app2/engine/spring/ApplicationStartup.java" line="38" mnemonic="1" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/com/app2/engine/job/SensorAlertRepeatJob.java" line="96" mnemonic="2" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/com/app2/engine/repository/custom/impl/MainSensorTypeARepositoryCustomImpl.java" line="52" mnemonic="1" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a6c4f90-025b-46d4-b1f4-a91e6dd71c6f" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/app2/engine/Service/SensorRange/SensorRangeService.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/app2/engine/Service/linenotify/AbstractLineNotifyService.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/app2/engine/Service/linenotify/LineNotifyService.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/app2/engine/controller/LineNotifyController.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/app2/engine/controller/MainSensorViewController.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/app2/engine/entity/model/ChatMessage.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/app2/engine/entity/model/MainSensorModel.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/app2/engine/entity/vcc/iot/IotSensorRange.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/app2/engine/entity/vcc/iot/IotSensorRangeLog.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/app2/engine/entity/vcc/iot/ms/MainSensorTypeA.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/app2/engine/job/IotSensorRangeJobService.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/app2/engine/job/SensorAlertJob.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/app2/engine/job/SensorAlertRepeatJob.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/app2/engine/repository/IotSensorRangeLogRepository.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/app2/engine/repository/IotSensorRangeRepository.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/app2/engine/repository/MainSensorTypeARepository.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/app2/engine/repository/ParameterRepository.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/app2/engine/repository/custom/MainSensorTypeARepositoryCustom.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/app2/engine/repository/custom/ParameterDetailRepositoryCustom.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/app2/engine/repository/custom/impl/MainSensorTypeARepositoryCustomImpl.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/app2/engine/repository/custom/impl/ParameterDetailRepositoryCustomImpl.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/app2/engine/spring/SessionHandler.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/app2/engine/spring/Task.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/app2/engine/spring/WebSocketClientConfig.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/app2/engine/util/DateUtil.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/app2/engine/util/LineMessageUtil.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/script/view/V_IOT_SENSOR_RANGE.sql" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_2_3.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_2_3.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_jayway_jsonpath_json_path_2_4_0.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_mchange_mchange_commons_java_0_2_11.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_vaadin_external_google_android_json_0_0_20131108_vaadin1.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_9_10.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_accessors_smart_1_2.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_json_smart_2_3.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_to_slf4j_2_11_2.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_9_0_16.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_assertj_assertj_core_3_11_1.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_library_1_3.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_2_23_4.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_2_6.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_5_0_4.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_quartz_scheduler_quartz_2_3_0.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_skyscreamer_jsonassert_1_5_0.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_1_3_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_quartz_2_1_3_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_2_1_3_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_2_1_3_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_test_autoconfigure_2_1_3_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_5_1_5_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_5_1_5_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_xmlunit_xmlunit_core_2_6_2.xml" afterPath="" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/app2/engine/entity/vcc/device/MainSensor.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/app2/engine/entity/vcc/iot/DeviceMachineView.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/app2/engine/job/MainSensorTypeAJob.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/app2/engine/repository/DeviceMachineViewRepository.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/app2/engine/repository/custom/MainSensorRepositoryCustom.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/app2/engine/repository/custom/impl/MainSensorRepositoryCustomImpl.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/engine.iml" afterPath="$PROJECT_DIR$/engine.iml" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app2/engine/EngineApplication.java" afterPath="$PROJECT_DIR$/src/main/java/com/app2/engine/EngineApplication.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app2/engine/constant/ServerConstant.java" afterPath="$PROJECT_DIR$/src/main/java/com/app2/engine/constant/ServerConstant.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app2/engine/entity/app/AppParameter.java" afterPath="$PROJECT_DIR$/src/main/java/com/app2/engine/entity/app/ParameterHeader.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app2/engine/entity/app/ParameterDetail.java" afterPath="$PROJECT_DIR$/src/main/java/com/app2/engine/entity/app/ParameterDetail.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app2/engine/repository/AppParameterRepository.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app2/engine/controller/LineNotifyController.java" afterPath="$PROJECT_DIR$/src/main/java/com/app2/engine/controller/LineNotifyController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app2/engine/controller/MainSensorViewController.java" afterPath="$PROJECT_DIR$/src/main/java/com/app2/engine/controller/MainSensorViewController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app2/engine/entity/vcc/iot/IotSensorRange.java" afterPath="$PROJECT_DIR$/src/main/java/com/app2/engine/entity/vcc/iot/IotSensorRangeView.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app2/engine/entity/vcc/iot/ms/MainSensorTypeA.java" afterPath="$PROJECT_DIR$/src/main/java/com/app2/engine/entity/vcc/iot/ms/MainSensorTypeA.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app2/engine/job/IotSensorRangeJobService.java" afterPath="$PROJECT_DIR$/src/main/java/com/app2/engine/job/IotSensorRangeJobService.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app2/engine/job/SensorAlertJob.java" afterPath="$PROJECT_DIR$/src/main/java/com/app2/engine/job/SensorAlertJob.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app2/engine/job/SensorAlertRepeatJob.java" afterPath="$PROJECT_DIR$/src/main/java/com/app2/engine/job/SensorAlertRepeatJob.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app2/engine/repository/IotSensorRangeRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/app2/engine/repository/IotSensorRangeRepository.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app2/engine/repository/custom/MainSensorTypeARepositoryCustom.java" afterPath="$PROJECT_DIR$/src/main/java/com/app2/engine/repository/custom/MainSensorTypeARepositoryCustom.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app2/engine/repository/custom/impl/MainSensorTypeARepositoryCustomImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/app2/engine/repository/custom/impl/MainSensorTypeARepositoryCustomImpl.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/app2/engine/spring/ApplicationStartup.java" afterPath="$PROJECT_DIR$/src/main/java/com/app2/engine/spring/ApplicationStartup.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/app2/engine/util/LineMessageUtil.java" afterPath="$PROJECT_DIR$/src/main/java/com/app2/engine/util/LineMessageUtil.java" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" afterPath="$PROJECT_DIR$/target/classes/application.properties" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/app2/engine/EngineApplication.class" afterPath="$PROJECT_DIR$/target/classes/com/app2/engine/EngineApplication.class" />
@@ -87,28 +42,38 @@
       <file leaf-file-name="SensorAlertJob.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/job/SensorAlertJob.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="78" column="0" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+            <state relative-caret-position="91">
+              <caret line="129" column="36" lean-forward="false" selection-start-line="129" selection-start-column="36" selection-end-line="129" selection-end-column="36" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.properties" pinned="false" current-in-tab="true">
+      <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="4" column="53" lean-forward="false" selection-start-line="4" selection-start-column="53" selection-end-line="4" selection-end-column="53" />
+            <state relative-caret-position="0">
+              <caret line="0" column="41" lean-forward="false" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="41" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ApplicationStartup.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/spring/ApplicationStartup.java">
+      <file leaf-file-name="MainSensorTypeARepositoryCustom.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/repository/custom/MainSensorTypeARepositoryCustom.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+            <state relative-caret-position="133">
+              <caret line="12" column="14" lean-forward="false" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainSensorTypeARepositoryCustomImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/repository/custom/impl/MainSensorTypeARepositoryCustomImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="224">
+              <caret line="41" column="47" lean-forward="true" selection-start-line="41" selection-start-column="47" selection-end-line="41" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -117,68 +82,58 @@
       <file leaf-file-name="SensorAlertRepeatJob.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/job/SensorAlertRepeatJob.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="73" column="21" lean-forward="true" selection-start-line="73" selection-start-column="21" selection-end-line="73" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ApplicationConstant.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/constant/ApplicationConstant.java">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="0" column="27" lean-forward="false" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ServerConstant.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/constant/ServerConstant.java">
+      <file leaf-file-name="log4j2.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/log4j2.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+            <state relative-caret-position="399">
+              <caret line="21" column="54" lean-forward="false" selection-start-line="21" selection-start-column="54" selection-end-line="21" selection-end-column="54" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IotSensorRangeJobService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/job/IotSensorRangeJobService.java">
+      <file leaf-file-name="LineMessageUtil.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/util/LineMessageUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-266">
-              <caret line="30" column="49" lean-forward="false" selection-start-line="30" selection-start-column="49" selection-end-line="30" selection-end-column="49" />
+            <state relative-caret-position="361">
+              <caret line="23" column="51" lean-forward="false" selection-start-line="23" selection-start-column="51" selection-end-line="23" selection-end-column="51" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IotSensorRangeLog.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/entity/vcc/iot/IotSensorRangeLog.java">
+      <file leaf-file-name="IotSensorRangeRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/repository/IotSensorRangeRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="14" column="72" lean-forward="false" selection-start-line="14" selection-start-column="72" selection-end-line="14" selection-end-column="72" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IotSensorRangeView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/entity/vcc/iot/IotSensorRangeView.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="133">
-              <caret line="12" column="74" lean-forward="false" selection-start-line="12" selection-start-column="74" selection-end-line="12" selection-end-column="74" />
+              <caret line="16" column="33" lean-forward="false" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IotSensorRange.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/entity/vcc/iot/IotSensorRange.java">
+      <file leaf-file-name="MainSensorViewController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/controller/MainSensorViewController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-267">
-              <caret line="75" column="25" lean-forward="true" selection-start-line="75" selection-start-column="25" selection-end-line="75" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LineNotifyService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/Service/linenotify/LineNotifyService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="26" column="26" lean-forward="false" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
+            <state relative-caret-position="64">
+              <caret line="48" column="28" lean-forward="true" selection-start-line="48" selection-start-column="28" selection-end-line="48" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -195,10 +150,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Jackson</find>
-      <find>h2</find>
-      <find>spring-boot-starter-tomcat</find>
-      <find>BeanUtils</find>
       <find>AppUtils</find>
       <find>BQve4mXKRvb4ssgNOOHHopJ41PZXEkqnH491bNIzMMo</find>
       <find>sentAsyncMessageWithToken</find>
@@ -225,10 +176,15 @@
       <find>SensorAlertJob</find>
       <find>Received</find>
       <find>numberWithCommas</find>
+      <find>uniqueConstraints</find>
+      <find>SensorAlertJ</find>
+      <find>(new Random().nextDouble())</find>
+      <find>SensorAlertRepeatJob</find>
     </findStrings>
     <replaceStrings>
       <replace>normalValue</replace>
       <replace>BeanUtils</replace>
+      <replace>Math.random() * 100 + 1</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -247,20 +203,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/Service/LineNotifyService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/entity/app/ParameterHeader.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/spring/Task.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/script/view/V_IOT_SENSOR_RANGE.sql" />
-        <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/repository/IotSensorRangeLogRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/job/SensorValueCurrent.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/Service/linenotify/AbstractLineNotifyService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/Service/linenotify/LineNotifyService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/controller/LineNotifyController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/job/FetdataJob.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/job/FetchdataJob.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/entity/model/MainSensor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/spring/MySessionHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/entity/model/ChatMessage.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/spring/MyStompSessionHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/EngineApplication.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/spring/SessionHandler.java" />
@@ -270,22 +212,14 @@
         <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/entity/vcc/iot/ms/MainSensorView1.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/entity/vcc/iot/ms/MainSensorViewTypeA.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/repository/MainSensorTypeARepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/repository/custom/MainSensorTypeARepositoryCustom.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/job/IotSensorRangeJob.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/entity/vcc/iot/ms/MainSensorTypeA.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/util/DateUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/repository/custom/impl/MainSensorTypeARepositoryCustomImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/job/MainSensorJob.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/controller/MainSensorViewController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/repository/IotSensorRangeRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/entity/model/MainSensorModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/job/IotSensorRangeJobService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/Service/SensorRange/SensorRangeService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/entity/vcc/iot/IotSensorRangeLog.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/log4j2.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/entity/vcc/iot/IotSensorRange.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/util/LineMessageUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/repository/ParameterHeaderRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/repository/ParameterDetailRepositoryCustom.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/repository/custom/ParameterHeaderRepository.java" />
@@ -293,11 +227,33 @@
         <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/repository/custom/ParameterDetailRepositoryCustom.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/repository/custom/impl/ParameterDetailRepositoryCustomImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/constant/ServerConstant.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/job/SensorAlertJob.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/job/SensorAlertJobRepeat.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/spring/ApplicationStartup.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/job/SensorAlertRepeatJob.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/job/SensorAlertRepeatJob.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/job/SensorAlertJob.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/repository/device/MainSensorRepositoryCustom.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/entity/vcc/view/IotSensorRange.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/entity/vcc/view/deviceMapMachineView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/entity/vcc/view/deviceMachineView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/repository/deviceMachineViewRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/entity/vcc/iot/view/IotSensorRange.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/entity/vcc/iot/DeviceMachineView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/entity/vcc/iot/IotSensorRange.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/entity/vcc/iot/IotSensorRangeView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/repository/DeviceMachineViewRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/repository/custom/device/MainSensorRepositoryCustom.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/repository/custom/MainSensorRepositoryCustom.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/repository/custom/impl/MainSensorRepositoryCustomImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/entity/vcc/device/MainSensor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/entity/vcc/iot/ms/MainSensorTypeA.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/spring/ApplicationStartup.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/job/MainSensorTypeAJob.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/repository/custom/MainSensorTypeARepositoryCustom.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/repository/custom/impl/MainSensorTypeARepositoryCustomImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/repository/IotSensorRangeRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/util/LineMessageUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/log4j2.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/app2/engine/controller/MainSensorViewController.java" />
       </list>
     </option>
   </component>
@@ -315,10 +271,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1635" />
-    <option name="y" value="128" />
-    <option name="width" value="1331" />
-    <option name="height" value="772" />
+    <option name="x" value="1634" />
+    <option name="y" value="121" />
+    <option name="width" value="1333" />
+    <option name="height" value="780" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -336,6 +292,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
@@ -378,15 +335,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="engine" type="462c0819:PsiDirectoryNode" />
-              <item name="aop" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="engine" type="b2602c69:ProjectViewProjectNode" />
-              <item name="VCCJobEngine" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="engine" type="462c0819:PsiDirectoryNode" />
               <item name="constant" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -397,66 +345,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="engine" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="engine" type="b2602c69:ProjectViewProjectNode" />
-              <item name="VCCJobEngine" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="engine" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="engine" type="b2602c69:ProjectViewProjectNode" />
-              <item name="VCCJobEngine" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="engine" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="engine" type="b2602c69:ProjectViewProjectNode" />
-              <item name="VCCJobEngine" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="engine" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-              <item name="base" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="engine" type="b2602c69:ProjectViewProjectNode" />
-              <item name="VCCJobEngine" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="engine" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="engine" type="b2602c69:ProjectViewProjectNode" />
-              <item name="VCCJobEngine" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="engine" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-              <item name="iot" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="engine" type="b2602c69:ProjectViewProjectNode" />
-              <item name="VCCJobEngine" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="engine" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-              <item name="iot" type="462c0819:PsiDirectoryNode" />
-              <item name="ms" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="engine" type="b2602c69:ProjectViewProjectNode" />
@@ -502,53 +390,6 @@
               <item name="VCCJobEngine" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="engine" type="462c0819:PsiDirectoryNode" />
-              <item name="Service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="engine" type="b2602c69:ProjectViewProjectNode" />
-              <item name="VCCJobEngine" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="engine" type="462c0819:PsiDirectoryNode" />
-              <item name="Service" type="462c0819:PsiDirectoryNode" />
-              <item name="linenotify" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="engine" type="b2602c69:ProjectViewProjectNode" />
-              <item name="VCCJobEngine" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="engine" type="462c0819:PsiDirectoryNode" />
-              <item name="Service" type="462c0819:PsiDirectoryNode" />
-              <item name="SensorRange" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="engine" type="b2602c69:ProjectViewProjectNode" />
-              <item name="VCCJobEngine" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="engine" type="462c0819:PsiDirectoryNode" />
-              <item name="spring" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="engine" type="b2602c69:ProjectViewProjectNode" />
-              <item name="VCCJobEngine" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="engine" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="engine" type="b2602c69:ProjectViewProjectNode" />
-              <item name="VCCJobEngine" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -559,12 +400,50 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="engine" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="engine" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="engine" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="cldrdata.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="engine" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="cldrdata.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="sun" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="engine" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="cldrdata.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="sun" type="462c0819:PsiDirectoryNode" />
+              <item name="cldr" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="engine" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="cldrdata.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="sun" type="462c0819:PsiDirectoryNode" />
+              <item name="cldr" type="462c0819:PsiDirectoryNode" />
+              <item name="lg" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="AndroidView" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -573,7 +452,7 @@
     <property name="android.sdk.path" value="$USER_HOME$/Android/Sdk" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../VCCWebsocketEngine" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../VCCApplication" />
     <property name="show.migrate.to.gradle.popup" value="false" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///home/thongchai/softSquareProject/VCC/new/VCCJobEngine/src/main/java/com/app2/engine/controller/LineNotifyController.java" />
     <property name="project.structure.last.edited" value="Project" />
@@ -587,20 +466,20 @@
     <property name="RequestMappingsPanelOrder2" value="2" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.app2.engine.spring" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.app2.engine.repository" />
-      <recent name="com.app2.engine.job" />
-      <recent name="com.app2.engine.repository.custom" />
-      <recent name="com.app2.engine.entity.vcc.iot.ms" />
-      <recent name="com.app2.engine.spring" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$/src/main/java/com/app2/engine/entity/app" />
       <recent name="$PROJECT_DIR$/src/main/java/com/app2/engine/constant" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.app2.engine.repository.custom.impl" />
+      <recent name="com.app2.engine.repository.device" />
+      <recent name="com.app2.engine.entity.vcc.device" />
+      <recent name="com.app2.engine.repository" />
+      <recent name="com.app2.engine.job" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.app2.engine.spring" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -757,16 +636,18 @@
       <workItem from="1558075985109" duration="104000" />
       <workItem from="1558076158430" duration="5893000" />
       <workItem from="1558090199826" duration="1201000" />
-      <workItem from="1558237801959" duration="15169000" />
+      <workItem from="1558237801959" duration="15525000" />
+      <workItem from="1558260366422" duration="847000" />
+      <workItem from="1558261627726" duration="12491000" />
+      <workItem from="1558281857714" duration="1501000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79414000" />
+    <option name="totallyTimeSpent" value="94609000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1635" y="128" width="1331" height="772" extended-state="6" />
-    <editor active="true" />
+    <frame x="1634" y="121" width="1333" height="780" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -784,7 +665,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39657855" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.49144635" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281493" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -792,12 +673,11 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" x="522" y="352" width="555" height="191" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.51017964" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984293" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25603113" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26381323" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -807,8 +687,9 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" x="522" y="352" width="555" height="191" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970452" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -846,65 +727,40 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/app2/engine/job/SensorAlertJob.java</url>
-          <line>157</line>
+          <line>154</line>
           <properties />
           <option name="timeStamp" value="137" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/app2/engine/controller/MainSensorViewController.java</url>
+          <line>74</line>
+          <properties />
+          <option name="timeStamp" value="282" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/app2/engine/controller/MainSensorViewController.java</url>
+          <line>44</line>
+          <properties />
+          <option name="timeStamp" value="284" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/app2/engine/controller/MainSensorViewController.java</url>
+          <line>72</line>
+          <properties />
+          <option name="timeStamp" value="292" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/app2/engine/controller/MainSensorViewController.java</url>
+          <line>53</line>
+          <properties />
+          <option name="timeStamp" value="293" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="233" />
+      <option name="time" value="294" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-websocket/5.1.5.RELEASE/spring-websocket-5.1.5.RELEASE.jar!/org/springframework/web/socket/config/annotation/AbstractWebSocketMessageBrokerConfigurer.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="16" column="22" lean-forward="false" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/tools/jdk1.8.0_77/src.zip!/java/net/URLClassLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5868">
-          <caret line="380" column="0" lean-forward="false" selection-start-line="380" selection-start-column="0" selection-end-line="380" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-websocket/5.0.2.RELEASE/spring-websocket-5.0.2.RELEASE.jar!/org/springframework/web/socket/config/annotation/WebSocketConfigurationSupport.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1548">
-          <caret line="98" column="1" lean-forward="false" selection-start-line="98" selection-start-column="1" selection-end-line="98" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-websocket/5.1.5.RELEASE/spring-websocket-5.1.5.RELEASE.jar!/org/springframework/web/socket/client/standard/StandardWebSocketClient.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-24">
-          <caret line="47" column="11" lean-forward="false" selection-start-line="47" selection-start-column="11" selection-end-line="47" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-messaging/5.1.5.RELEASE/spring-messaging-5.1.5.RELEASE.jar!/org/springframework/messaging/simp/stomp/StompSessionHandlerAdapter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="10" column="75" lean-forward="false" selection-start-line="10" selection-start-column="75" selection-end-line="10" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-messaging/5.1.5.RELEASE/spring-messaging-5.1.5.RELEASE.jar!/org/springframework/messaging/simp/stomp/StompFrameHandler.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-messaging/5.1.5.RELEASE/spring-messaging-5.1.5.RELEASE.jar!/org/springframework/messaging/simp/stomp/StompSessionHandler.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="9" column="58" lean-forward="true" selection-start-line="9" selection-start-column="58" selection-end-line="9" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-websocket/5.1.5.RELEASE/spring-websocket-5.1.5.RELEASE.jar!/org/springframework/web/socket/messaging/WebSocketStompClient.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
@@ -927,29 +783,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/EngineApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="27" column="4" lean-forward="false" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="87" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/repository/MainSensorTypeARepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/entity/base/BaseEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="41" column="7" lean-forward="false" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/util/DateUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
@@ -958,24 +791,6 @@
             <element signature="imports" expanded="false" />
             <element signature="e#371#372#0" expanded="false" />
             <element signature="e#403#404#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/repository/custom/MainSensorTypeARepositoryCustom.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="42" lean-forward="false" selection-start-line="0" selection-start-column="42" selection-end-line="0" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/controller/MainSensorViewController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="45" column="18" lean-forward="false" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -996,37 +811,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/repository/IotSensorRangeRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="12" column="50" lean-forward="false" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/job/MainSensorJob.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/job/SensorValueCurrent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-537">
-          <caret line="8" column="55" lean-forward="false" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/job/MainSensorJob.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/job/SensorValueCurrent.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/Service/SensorRange/SensorRangeService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1034,7 +824,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="146">
           <caret line="121" column="0" lean-forward="false" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1046,19 +835,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j2.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="24" column="53" lean-forward="false" selection-start-line="24" selection-start-column="53" selection-end-line="24" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/5.1.5.RELEASE/spring-core-5.1.5.RELEASE.jar!/org/springframework/util/concurrent/FailureCallback.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
           <caret line="9" column="9" lean-forward="false" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1066,40 +846,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
           <caret line="89" column="0" lean-forward="false" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/util/LineMessageUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-551">
-          <caret line="16" column="25" lean-forward="false" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/entity/model/ChatMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/entity/model/MainSensorModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1025">
-          <caret line="57" column="29" lean-forward="false" selection-start-line="57" selection-start-column="29" selection-end-line="57" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/entity/vcc/iot/ms/MainSensorTypeA.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="55" column="21" lean-forward="false" selection-start-line="55" selection-start-column="17" selection-end-line="55" selection-end-column="21" />
           <folding />
         </state>
       </provider>
@@ -1112,35 +858,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/repository/custom/ParameterDetailRepositoryCustom.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="48" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/repository/custom/impl/MainSensorTypeARepositoryCustomImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="33" column="95" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="95" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/entity/app/ParameterHeader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="19" column="23" lean-forward="false" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/entity/app/ParameterDetail.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="93">
           <caret line="30" column="34" lean-forward="false" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1149,7 +870,7 @@
         <state relative-caret-position="112">
           <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1158,7 +879,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1188,8 +908,69 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/Service/linenotify/LineNotifyService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
+        <state relative-caret-position="399">
           <caret line="26" column="26" lean-forward="false" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/constant/ApplicationConstant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/constant/ServerConstant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="1" lean-forward="false" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/job/IotSensorRangeJobService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="36" column="39" lean-forward="true" selection-start-line="36" selection-start-column="6" selection-end-line="36" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/entity/app/ParameterHeader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="19" column="23" lean-forward="false" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/entity/model/ChatMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/entity/model/MainSensorModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="57" column="29" lean-forward="false" selection-start-line="57" selection-start-column="29" selection-end-line="57" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/repository/MainSensorTypeARepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/entity/base/BaseEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="41" column="7" lean-forward="false" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -1202,66 +983,173 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/entity/vcc/iot/IotSensorRange.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/entity/vcc/iot/DeviceMachineView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-267">
-          <caret line="75" column="25" lean-forward="true" selection-start-line="75" selection-start-column="25" selection-end-line="75" selection-end-column="25" />
+        <state relative-caret-position="285">
+          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/repository/DeviceMachineViewRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="84" lean-forward="false" selection-start-line="5" selection-start-column="67" selection-end-line="5" selection-end-column="84" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/repository/custom/ParameterDetailRepositoryCustom.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="48" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/job/IotSensorRangeJobService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/EngineApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-266">
-          <caret line="30" column="49" lean-forward="false" selection-start-line="30" selection-start-column="49" selection-end-line="30" selection-end-column="49" />
+        <state relative-caret-position="198">
+          <caret line="27" column="87" lean-forward="false" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="87" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/constant/ApplicationConstant.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/entity/vcc/device/MainSensor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="-17">
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/job/SensorAlertJob.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/entity/vcc/iot/ms/MainSensorTypeA.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="78" column="0" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="615">
+          <caret line="71" column="51" lean-forward="false" selection-start-line="71" selection-start-column="51" selection-end-line="71" selection-end-column="51" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/spring/ApplicationStartup.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+        <state relative-caret-position="122">
+          <caret line="36" column="45" lean-forward="false" selection-start-line="36" selection-start-column="45" selection-end-line="36" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/repository/custom/impl/MainSensorRepositoryCustomImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/job/SensorAlertRepeatJob.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/repository/custom/MainSensorRepositoryCustom.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="73" column="21" lean-forward="true" selection-start-line="73" selection-start-column="21" selection-end-line="73" selection-end-column="21" />
+        <state relative-caret-position="133">
+          <caret line="7" column="1" lean-forward="false" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/constant/ServerConstant.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/job/MainSensorTypeAJob.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        <state relative-caret-position="188">
+          <caret line="19" column="11" lean-forward="false" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/tools/jdk1.8.0_77/src.zip!/java/text/DateFormat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="360" column="16" lean-forward="false" selection-start-line="360" selection-start-column="16" selection-end-line="360" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="53" lean-forward="false" selection-start-line="4" selection-start-column="53" selection-end-line="4" selection-end-column="53" />
+        <state relative-caret-position="0">
+          <caret line="0" column="41" lean-forward="false" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/repository/custom/MainSensorTypeARepositoryCustom.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="12" column="14" lean-forward="false" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/entity/vcc/iot/IotSensorRangeView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="16" column="33" lean-forward="false" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/repository/IotSensorRangeRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="14" column="72" lean-forward="false" selection-start-line="14" selection-start-column="72" selection-end-line="14" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/util/LineMessageUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="23" column="51" lean-forward="false" selection-start-line="23" selection-start-column="51" selection-end-line="23" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j2.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="21" column="54" lean-forward="false" selection-start-line="21" selection-start-column="54" selection-end-line="21" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/job/SensorAlertRepeatJob.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="27" lean-forward="false" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/repository/custom/impl/MainSensorTypeARepositoryCustomImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="41" column="47" lean-forward="true" selection-start-line="41" selection-start-column="47" selection-end-line="41" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/job/SensorAlertJob.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="129" column="36" lean-forward="false" selection-start-line="129" selection-start-column="36" selection-end-line="129" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/app2/engine/controller/MainSensorViewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="48" column="28" lean-forward="true" selection-start-line="48" selection-start-column="28" selection-end-line="48" selection-end-column="28" />
           <folding />
         </state>
       </provider>

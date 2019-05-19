@@ -10,4 +10,7 @@ import java.util.Map;
 
 public interface MainSensorTypeARepositoryCustom {
     List<Map> findBySensorCode(String device, String sensorCode, String oucode);
+    List<Map> findLastByDeviceCodeAndOuMaxSize(String device, String ouCode,Integer maxSize);
+
+    String findMaxIdByDeviceCodeAndOuCode(String device,String ouCode);
 }

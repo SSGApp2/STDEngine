@@ -35,10 +35,9 @@ public class ApplicationStartup implements ApplicationListener<ApplicationReadyE
         LOGGER.info("Spring Data REST : /rest-api");
 
         ServerConstant.WebSockerServer = parameterDetailRepositoryCustom.findByParameterCodeAndParameterValue1("50", "VCCWebSocketServer").getParameterValue2();
-
         sensorAlertJob.startJob();
         sensorAlertJobRepeat.startJob();
-//        AppParameter appParameterConfig = appParameterRepository.findByCode("50");//example
+
     }
 
 }

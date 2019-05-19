@@ -33,8 +33,8 @@ public class MainSensorTypeARepositoryCustomImpl implements MainSensorTypeARepos
 
         Criteria criteria = ((Session) em.getDelegate()).createCriteria(MainSensorTypeA.class);
         criteria.add(Restrictions.eq("deviceName", device));
-        criteria.add(Restrictions.ge("date",DateUtil.getDateWithRemoveTime(currentDate)));
-        criteria.add(Restrictions.le("date",DateUtil.getDateWithMaxTime(currentDate)));
+        criteria.add(Restrictions.ge("date", DateUtil.getDateWithRemoveTime(currentDate)));
+        criteria.add(Restrictions.le("date", DateUtil.getDateWithMaxTime(currentDate)));
 
         ProjectionList projectionList = Projections.projectionList();
         projectionList.add(Projections.property(sensorCode), "y");
@@ -46,5 +46,36 @@ public class MainSensorTypeARepositoryCustomImpl implements MainSensorTypeARepos
 
 
         return criteria.list();
+    }
+
+    @Override
+    public List<Map> findLastByDeviceCodeAndOuMaxSize(String device, String ouCode, Integer maxSize) {
+        Criteria criteria = ((Session) em.getDelegate()).createCriteria(MainSensorTypeA.class);
+        criteria.add(Restrictions.eq("deviceName", device));
+        criteria.addOrder(Order.desc("date"));
+        criteria.setMaxResults(maxSize);
+        criteria.setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP); //TOMAP
+        return criteria.list();
+    }
+
+    @Override
+    public String findMaxIdByDeviceCodeAndOuCode(String device, String ouCode) {
+        Criteria criteria = ((Session) em.getDelegate()).createCriteria(MainSensorTypeA.class);
+        criteria.add(Restrictions.eq("deviceName", device));
+        criteria.add(Restrictions.eq("ouCode", ouCode));
+        criteria.add(Restrictions.isNotNull("_id"));
+        ProjectionList proj = Projections.projectionList();
+        proj.add(Projections.max("_id"));
+        proj.add(Projections.groupProperty("deviceName"));
+        proj.add(Projections.groupProperty("ouCode"));
+        criteria.setProjection(proj);
+        List list = criteria.list();
+        String maxId = null;
+        if(list.size()>0){
+            Object[] row = (Object[]) list.get(0);
+            maxId=String.valueOf(row[0]);
+        }
+        return maxId;
+
     }
 }

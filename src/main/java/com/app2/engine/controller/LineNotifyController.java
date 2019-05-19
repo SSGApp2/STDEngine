@@ -1,9 +1,6 @@
 package com.app2.engine.controller;
 
-import com.app2.engine.Service.linenotify.AbstractLineNotifyService;
 import com.app2.engine.Service.linenotify.LineNotifyService;
-import com.app2.engine.entity.vcc.iot.IotSensorRange;
-import com.app2.engine.entity.vcc.iot.IotSensorRangeLog;
 import com.app2.engine.repository.IotSensorRangeLogRepository;
 import com.google.gson.Gson;
 import flexjson.JSONSerializer;

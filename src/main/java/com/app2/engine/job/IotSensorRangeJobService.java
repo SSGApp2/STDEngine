@@ -1,7 +1,7 @@
 //package com.app2.engine.job;
 //
 //import com.app2.engine.Service.linenotify.LineNotifyService;
-//import com.app2.engine.entity.vcc.iot.IotSensorRange;
+//import com.app2.engine.entity.vcc.iot.IotSensorRangeView;
 //import com.app2.engine.entity.vcc.iot.IotSensorRangeLog;
 //import com.app2.engine.repository.IotSensorRangeLogRepository;
 //import com.app2.engine.repository.IotSensorRangeRepository;
@@ -37,7 +37,7 @@
 //    public void IotSensorRangeJob() {
 //        Gson gson=new Gson();
 //        long stTime = System.currentTimeMillis();
-//        for (IotSensorRange iotSensorRange : iotSensorRangeRepository.findByStatusActive()) {
+//        for (IotSensorRangeView iotSensorRange : iotSensorRangeRepository.findByStatusActive()) {
 //            try{
 //                Long id=iotSensorRange.getId();
 //                String sensorCode = iotSensorRange.getSensorCode();

@@ -4,7 +4,7 @@ import com.app2.engine.Service.SensorRange.SensorRangeService;
 import com.app2.engine.Service.linenotify.LineNotifyService;
 import com.app2.engine.constant.ServerConstant;
 import com.app2.engine.entity.model.MainSensorModel;
-import com.app2.engine.entity.vcc.iot.IotSensorRange;
+import com.app2.engine.entity.vcc.iot.IotSensorRangeView;
 import com.app2.engine.entity.vcc.iot.IotSensorRangeLog;
 import com.app2.engine.repository.IotSensorRangeLogRepository;
 import com.app2.engine.repository.IotSensorRangeRepository;
@@ -53,7 +53,8 @@ public class SensorAlertRepeatJob {
 
     public void startJob() {
         //initial
-        stompClient.connect("ws://" + ServerConstant.WebSockerServer + "/ws", new StompSessionHandlerAdapter() {
+        String socketURL= ServerConstant.WebSockerServer.replace("http://", "");
+        stompClient.connect("ws://" + socketURL + "/ws", new StompSessionHandlerAdapter() {
             @Override
             public void afterConnected(StompSession session, StompHeaders connectedHeaders) {
                 session.setAutoReceipt(true);
@@ -93,7 +94,7 @@ public class SensorAlertRepeatJob {
                 String ouCode = mainSensorModel.getOuCode();
                 Gson gson = new Gson();
                 DateTime currentTime = new DateTime();
-                for (IotSensorRange iotSensorRange : iotSensorRangeRepository.findByDeviceCodeAndOuCode(deviceCode, ouCode)) {
+                for (IotSensorRangeView iotSensorRange : iotSensorRangeRepository.findByDeviceCodeAndOuCode(deviceCode, ouCode)) {
 
                     Long id = iotSensorRange.getId();
                     String sensorCode = iotSensorRange.getSensorCode();

@@ -19,10 +19,14 @@
             <AppenderRef ref="Console" />
             <AppenderRef ref="File" />
         </Logger>
+        <Logger name="com.app2.engine.job" level="info" additivity="false">
+            <AppenderRef ref="Console" />
+            <AppenderRef ref="File" />
+        </Logger>
 
 
         <!-- Log SQL statements -->
-        <Logger name="org.hibernate.SQL" level="error" additivity="false">
+        <Logger name="org.hibernate.SQL" level="debug" additivity="false">
             <AppenderRef ref="Console" />
             <AppenderRef ref="File" />
         </Logger>

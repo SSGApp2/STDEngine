@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -35,31 +36,46 @@ public class MainSensorViewController {
 //        return mainSensorTypeARepository.findAll();
     }
 
+    @GetMapping("/example2")
+    public List<Map> example2(
+            @RequestParam(value = "deviceCode") String deviceCode,
+            @RequestParam(value = "ouCode") String ouCode,
+            @RequestParam(value = "maxSize") Integer maxsize
+    ) {
+        return mainSensorTypeARepositoryCustom.findLastByDeviceCodeAndOuMaxSize(deviceCode, ouCode, maxsize);
+    }
+
     @Transactional
     @GetMapping("/makeData")
     public void makeData(@RequestParam(value = "feq") Integer feq) {
-        mainSensorTypeARepository.deleteAll();
-        Date current = DateUtil.getCurrentDate();
-        DateTime dt = new DateTime(DateUtil.getDateWithRemoveTime(current));
-        Date currentMax = DateUtil.getDateWithMaxTime(current);
-        int count=0;
-        while (dt.toDate().compareTo(currentMax)<0) {
-            dt = dt.plusMinutes(feq);
-            MainSensorTypeA mainSensorModel = new MainSensorTypeA();
-            mainSensorModel.setDeviceName("XDK001");
-            mainSensorModel.setAcust((new Random().nextDouble()));
-            mainSensorModel.setHumid((new Random().nextDouble()));
-            mainSensorModel.setLight((new Random().nextDouble()));
-            mainSensorModel.setPressu((new Random().nextDouble()));
-            mainSensorModel.setTemp((new Random().nextDouble()));
-            mainSensorModel.setOuCode("DEV");
-            mainSensorModel.setDate(dt.toDate());
-            mainSensorTypeARepository.save(mainSensorModel);
+        try {
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 
-            count++;
+            mainSensorTypeARepository.deleteAll();
+            Date current = format.parse("2019-01-01");
+            DateTime dt = new DateTime(DateUtil.getDateWithRemoveTime(current));
+            Date currentMax = format.parse("2019-12-31");
+            int count = 0;
+            while (dt.toDate().compareTo(currentMax) < 0) {
+                dt = dt.plusMinutes(1);
+                MainSensorTypeA mainSensorModel = new MainSensorTypeA();
+                mainSensorModel.set_id(String.valueOf(count));
+                mainSensorModel.setDeviceName("XDK001");
+                mainSensorModel.setAcust(Math.random() * 100 + 1);
+                mainSensorModel.setHumid(Math.random() * 100 + 1);
+                mainSensorModel.setLight(Math.random() * 100 + 1);
+                mainSensorModel.setPressu(Math.random() * 100 + 1);
+                mainSensorModel.setTemp(Math.random() * 100 + 1);
+                mainSensorModel.setOuCode("DEV");
+                mainSensorModel.setDate(dt.toDate());
+                mainSensorTypeARepository.save(mainSensorModel);
+
+                count++;
+            }
+            LOGGER.debug("Example Job Save Data {} ", count);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        LOGGER.debug("Example Job Save Data {} ",count);
     }
-
 
 }
