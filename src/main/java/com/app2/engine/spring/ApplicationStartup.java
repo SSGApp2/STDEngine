@@ -1,6 +1,7 @@
 package com.app2.engine.spring;
 
 import com.app2.engine.constant.ServerConstant;
+import com.app2.engine.job.MongodbExampleData;
 import com.app2.engine.job.SensorAlertJob;
 import com.app2.engine.job.SensorAlertRepeatJob;
 import com.app2.engine.repository.custom.ParameterDetailRepositoryCustom;
@@ -27,6 +28,9 @@ public class ApplicationStartup implements ApplicationListener<ApplicationReadyE
     @Autowired
     private SensorAlertRepeatJob sensorAlertJobRepeat;
 
+    @Autowired
+    private MongodbExampleData mongodbExampleData;
+
     @Override
     @Transactional
     public void onApplicationEvent(ApplicationReadyEvent applicationReadyEvent) {
@@ -37,6 +41,7 @@ public class ApplicationStartup implements ApplicationListener<ApplicationReadyE
         ServerConstant.WebSockerServer = parameterDetailRepositoryCustom.findByParameterCodeAndParameterValue1("50", "VCCWebSocketServer").getParameterValue2();
         sensorAlertJob.startJob();
         sensorAlertJobRepeat.startJob();
+        mongodbExampleData.startJob();
 
     }
 

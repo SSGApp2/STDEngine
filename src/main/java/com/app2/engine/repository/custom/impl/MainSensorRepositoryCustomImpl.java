@@ -2,6 +2,7 @@ package com.app2.engine.repository.custom.impl;
 
 import com.app2.engine.entity.vcc.device.MainSensor;
 import com.app2.engine.repository.custom.MainSensorRepositoryCustom;
+import com.app2.engine.util.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -37,12 +38,14 @@ public class MainSensorRepositoryCustomImpl implements MainSensorRepositoryCusto
         Query query = new Query();
         query.limit(1);
         query.addCriteria(Criteria.where("DeviceName").is(deviceCode));
-        query.addCriteria(Criteria.where("_id").gt(maxId));
-        List<MainSensor> data = mongoTemplate.find(query, MainSensor.class);
-        if(data.size()>0){
-            return data.get(0);
-        }else{
+        query.with(new Sort(Sort.Direction.DESC, "_id"));
+        MainSensor mainSensor = mongoTemplate.findOne(query, MainSensor.class);
+        if(BeanUtils.isNotNull(mainSensor)&&mainSensor.get_id().equals(maxId)){
+            //Value Not Change
             return null;
+        }else{
+            return mainSensor;
         }
     }
+
 }

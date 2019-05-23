@@ -1,7 +1,7 @@
 package com.app2.engine.repository.custom.impl;
 
-import com.app2.engine.entity.vcc.iot.ms.MainSensorViewTypeA;
-import com.app2.engine.repository.custom.MainSensorTypeARepositoryCustom;
+import com.app2.engine.entity.vcc.iot.ms.MainSensorViewTypeB;
+import com.app2.engine.repository.custom.MainSensorTypeBRepositoryCustom;
 import com.app2.engine.util.DateUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -21,50 +21,19 @@ import java.util.List;
 import java.util.Map;
 
 @Repository
-public class MainSensorTypeARepositoryCustomImpl implements MainSensorTypeARepositoryCustom {
-    private static final Logger LOGGER = LogManager.getLogger(MainSensorTypeARepositoryCustomImpl.class);
+public class MainSensorTypeBRepositoryCustomImpl implements MainSensorTypeBRepositoryCustom {
+    private static final Logger LOGGER = LogManager.getLogger(MainSensorTypeBRepositoryCustomImpl.class);
 
     @PersistenceContext
     private EntityManager em;
 
     @Override
-    public List<Map> findBySensorCode(String device, String sensorCode, String ouCode) {
-        Date currentDate = DateUtil.getCurrentDate();
-
-        Criteria criteria = ((Session) em.getDelegate()).createCriteria(MainSensorViewTypeA.class);
-        criteria.add(Restrictions.eq("deviceName", device));
-        criteria.add(Restrictions.ge("date", DateUtil.getDateWithRemoveTime(currentDate)));
-        criteria.add(Restrictions.le("date", DateUtil.getDateWithMaxTime(currentDate)));
-
-        ProjectionList projectionList = Projections.projectionList();
-        projectionList.add(Projections.property(sensorCode), "y");
-        projectionList.add(Projections.property("date"), "x");
-        criteria.setProjection(projectionList);
-        criteria.addOrder(Order.asc("date"));
-
-        criteria.setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP); //TOMAP
-
-
-        return criteria.list();
-    }
-
-    @Override
-    public List<Map> findLastByDeviceCodeAndOuMaxSize(String device, String ouCode, Integer maxSize) {
-        Criteria criteria = ((Session) em.getDelegate()).createCriteria(MainSensorViewTypeA.class);
-        criteria.add(Restrictions.eq("deviceName", device));
-        criteria.addOrder(Order.desc("date"));
-        criteria.setMaxResults(maxSize);
-        criteria.setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP); //TOMAP
-        return criteria.list();
-    }
-
-    @Override
     public List<Map> findByDateFromTo(String deviceCode, String sensorCode, Date dateFrom, Date dateTo, String ouCode) {
         Date currentDate = DateUtil.getCurrentDate();
 
-        Criteria criteria = ((Session) em.getDelegate()).createCriteria(MainSensorViewTypeA.class);
+        Criteria criteria = ((Session) em.getDelegate()).createCriteria(MainSensorViewTypeB.class);
         criteria.add(Restrictions.eq("deviceName", deviceCode));
-        criteria.add(Restrictions.eq("ouCode",ouCode));
+        criteria.add(Restrictions.eq("ouCode", ouCode));
         criteria.add(Restrictions.ge("date", DateUtil.getDateWithRemoveTime(dateFrom)));
         criteria.add(Restrictions.le("date", DateUtil.getDateWithMaxTime(dateTo)));
 
@@ -73,14 +42,13 @@ public class MainSensorTypeARepositoryCustomImpl implements MainSensorTypeARepos
         projectionList.add(Projections.property("date"), "x");
         criteria.setProjection(projectionList);
         criteria.addOrder(Order.asc("date"));
-
         criteria.setResultTransformer(Transformers.ALIAS_TO_ENTITY_MAP); //TOMAP
         return criteria.list();
     }
 
     @Override
     public String findMaxIdByDeviceCodeAndOuCode(String device, String ouCode) {
-        Criteria criteria = ((Session) em.getDelegate()).createCriteria(MainSensorViewTypeA.class);
+        Criteria criteria = ((Session) em.getDelegate()).createCriteria(MainSensorViewTypeB.class);
         criteria.add(Restrictions.eq("deviceName", device));
         criteria.add(Restrictions.eq("ouCode", ouCode));
         criteria.add(Restrictions.isNotNull("_id"));
@@ -91,11 +59,10 @@ public class MainSensorTypeARepositoryCustomImpl implements MainSensorTypeARepos
         criteria.setProjection(proj);
         List list = criteria.list();
         String maxId = null;
-        if(list.size()>0){
+        if (list.size() > 0) {
             Object[] row = (Object[]) list.get(0);
-            maxId=String.valueOf(row[0]);
+            maxId = String.valueOf(row[0]);
         }
         return maxId;
-
     }
 }

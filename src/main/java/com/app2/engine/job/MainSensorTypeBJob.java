@@ -2,11 +2,11 @@ package com.app2.engine.job;
 
 import com.app2.engine.entity.vcc.device.MainSensor;
 import com.app2.engine.entity.vcc.iot.DeviceMachineView;
-import com.app2.engine.entity.vcc.iot.ms.MainSensorViewTypeA;
+import com.app2.engine.entity.vcc.iot.ms.MainSensorViewTypeB;
 import com.app2.engine.repository.DeviceMachineViewRepository;
-import com.app2.engine.repository.MainSensorTypeARepository;
+import com.app2.engine.repository.MainSensorTypeBRepository;
 import com.app2.engine.repository.custom.MainSensorRepositoryCustom;
-import com.app2.engine.repository.custom.MainSensorTypeARepositoryCustom;
+import com.app2.engine.repository.custom.MainSensorTypeBRepositoryCustom;
 import com.app2.engine.util.BeanUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -17,13 +17,13 @@ import org.springframework.stereotype.Component;
 import javax.transaction.Transactional;
 
 @Component
-public class MainSensorTypeAJob {
-    private static final Logger LOGGER = LogManager.getLogger(MainSensorTypeAJob.class);
+public class MainSensorTypeBJob {
+    private static final Logger LOGGER = LogManager.getLogger(MainSensorTypeBJob.class);
 
     @Autowired
-    private MainSensorTypeARepository mainSensorTypeARepository;
+    private MainSensorTypeBRepository mainSensorTypeBRepository;
     @Autowired
-    private MainSensorTypeARepositoryCustom mainSensorTypeARepositoryCustom;
+    private MainSensorTypeBRepositoryCustom mainSensorTypeBRepositoryCustom;
     @Autowired
     private DeviceMachineViewRepository deviceMachineViewRepository;
     @Autowired
@@ -31,13 +31,13 @@ public class MainSensorTypeAJob {
 
     @Transactional
 //    @Scheduled(fixedDelay = 2500)
-    @Scheduled(cron = "0 * * ? * *") //every min
+    @Scheduled(cron = "0 0 * ? * *") //every Hours
     public void saveData() {
-        LOGGER.info("=================Start Job MainSensorTypeAJob=================");
+        LOGGER.info("=================Start Job MainSensorTypeBJob=================");
         for (DeviceMachineView deviceMachineView : deviceMachineViewRepository.findAll()) {
             String deviceCode = deviceMachineView.getDeviceCode();
             String ouCode = deviceMachineView.getOuCode();
-            String maxId = mainSensorTypeARepositoryCustom.findMaxIdByDeviceCodeAndOuCode(deviceCode, ouCode);
+            String maxId = mainSensorTypeBRepositoryCustom.findMaxIdByDeviceCodeAndOuCode(deviceCode, ouCode);
             MainSensor mainSensor;
             if (BeanUtils.isNotNull(maxId)) {
                 mainSensor = mainSensorRepositoryCustom.findLastRecordByDeviceCodeAndOuAndGtMaxId(deviceCode, ouCode, maxId);
@@ -46,11 +46,11 @@ public class MainSensorTypeAJob {
             }
             if (BeanUtils.isNotNull(mainSensor)) {
                 //Have new Data
-                MainSensorViewTypeA mainSensorTypeA = new MainSensorViewTypeA();
-                mainSensorTypeA.convertMainSensor(mainSensor);
-                mainSensorTypeA.setOuCode(ouCode);
-                mainSensorTypeARepository.save(mainSensorTypeA);
-                LOGGER.debug("New data {}", mainSensorTypeA.get_id());
+                MainSensorViewTypeB mainSensorTypeB = new MainSensorViewTypeB();
+                mainSensorTypeB.convertMainSensor(mainSensor);
+                mainSensorTypeB.setOuCode(ouCode);
+                mainSensorTypeBRepository.save(mainSensorTypeB);
+                LOGGER.debug("New data {}", mainSensorTypeB.get_id());
             }
         }
     }
