@@ -4,7 +4,6 @@ import com.app2.engine.Service.linenotify.LineNotifyService;
 import com.app2.engine.entity.model.MainSensorModel;
 import com.app2.engine.entity.vcc.iot.IotSensorCombineLog;
 import com.app2.engine.entity.vcc.iot.IotSensorCombineView;
-import com.app2.engine.entity.vcc.iot.IotSensorRangeLog;
 import com.app2.engine.repository.IotSensorCombineLogRepository;
 import com.app2.engine.repository.IotSensorCombineRepository;
 import com.app2.engine.util.BeanUtils;
@@ -20,6 +19,7 @@ import org.springframework.messaging.simp.stomp.StompSessionHandlerAdapter;
 import org.springframework.stereotype.Service;
 import org.springframework.util.concurrent.ListenableFutureCallback;
 import org.springframework.web.socket.messaging.WebSocketStompClient;
+import com.app2.engine.constant.ServerConstant;
 
 import java.lang.reflect.Type;
 import java.util.*;
@@ -43,8 +43,7 @@ public class IotSensorCombineAlertJob {
 
     public void startJob() {
         //initial
-//        String socketURL= ServerConstant.WebSockerServer.replace("http://", "");
-        String socketURL= "localhost:8090";
+        String socketURL= ServerConstant.WebSockerServer.replace("http://", "");
         stompClient.connect("ws://" + socketURL + "/ws", new StompSessionHandlerAdapter() {
 
             @Override
