@@ -99,7 +99,7 @@ public class IotSensorCombineAlertJob {
                      checkTimeAlert = iotSensorCombineView.get(0).checkTimeLog(stTime1, timeLog);
                  }
              }
-             if(checkTimeAlert) {
+
                  for (IotSensorCombineView iotSensorCombineRange : iotSensorCombineView) {
 
                      if (iotSensorCombineRange.calculateCombineRange(mainSensorModel
@@ -112,7 +112,15 @@ public class IotSensorCombineAlertJob {
                          break;
                      }
                  }
-             }
+
+                if(!iotSensorCombineView.isEmpty() && iotSensorCombineView.size() != 0 && !checkAlert) {
+                    IotSensorCombineLog iotSensorCombineLog = iotSensorCombineLogRepository
+                            .findByIotSensorCombineId(iotSensorCombineView.get(0).getIotSensorCombine());
+                    if(iotSensorCombineLog != null) {
+                        iotSensorCombineLogRepository.delete(iotSensorCombineLog);
+                    }
+                }
+
                 if(checkAlert && checkTimeAlert){
                     //ถึงเกณฑ์ที่ต้องเริ่มแจ้งเตือน
                     String lineToken = iotSensorCombineView.get(0).getLineToken();
