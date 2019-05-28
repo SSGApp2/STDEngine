@@ -1,6 +1,7 @@
 package com.app2.engine.spring;
 
 import com.app2.engine.constant.ServerConstant;
+import com.app2.engine.job.IotSensorCombineAlertJob;
 import com.app2.engine.job.MongodbExampleData;
 import com.app2.engine.job.SensorAlertJob;
 import com.app2.engine.job.SensorAlertRepeatJob;
@@ -31,6 +32,9 @@ public class ApplicationStartup implements ApplicationListener<ApplicationReadyE
     @Autowired
     private MongodbExampleData mongodbExampleData;
 
+    @Autowired
+    IotSensorCombineAlertJob iotSensorCombineAlertJob;
+
     @Override
     @Transactional
     public void onApplicationEvent(ApplicationReadyEvent applicationReadyEvent) {
@@ -42,7 +46,7 @@ public class ApplicationStartup implements ApplicationListener<ApplicationReadyE
         sensorAlertJob.startJob();
         sensorAlertJobRepeat.startJob();
         mongodbExampleData.startJob();
-
+        iotSensorCombineAlertJob.startJob();
     }
 
 }
