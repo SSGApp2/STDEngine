@@ -63,9 +63,11 @@ public class IotSensorCombineView {
         Double checkRange = 0d;
         if (this.valueType.equals("0")) {
             if (this.displayType.equals("A")) {
-                checkRange = ((this.normalValue / 100) * this.amount) + this.normalValue;
+                checkRange = ((this.normalValue / 100) * this.amount);
                 if (!this.normalValue.equals(range)) {
-                    if (checkRange >= range || checkRange <= range) {
+                    if (range >= (checkRange+this.normalValue)) {
+                        return true;
+                    } else if (range <= (this.normalValue - checkRange)) {
                         return true;
                     }
                 } else {
@@ -74,7 +76,7 @@ public class IotSensorCombineView {
             } else if (this.equals("P")) {
                 checkRange = ((this.normalValue / 100) * this.amount) + this.normalValue;
                 if (!this.normalValue.equals(range)) {
-                    if (checkRange >= range) {
+                    if (range >= checkRange) {
                         return true;
                     }
                 } else {
@@ -83,7 +85,7 @@ public class IotSensorCombineView {
             } else {
                 checkRange = ((this.normalValue / 100) * this.amount) + this.normalValue;
                 if (!this.normalValue.equals(range)) {
-                    if (checkRange <= range) {
+                    if (range <= checkRange) {
                         return true;
                     }
                 } else {
@@ -95,7 +97,9 @@ public class IotSensorCombineView {
             if (this.displayType.equals("A")) {
                 checkRange = this.amount + this.normalValue;
                 if (!this.normalValue.equals(range)) {
-                    if (checkRange >= range || checkRange <= range) {
+                    if (range >= checkRange) {
+                        return true;
+                    } else if (range <= (this.normalValue - this.amount)) {
                         return true;
                     }
                 } else {
@@ -104,7 +108,7 @@ public class IotSensorCombineView {
             } else if (this.equals("P")) {
                 checkRange = this.amount + this.normalValue;
                 if (!this.normalValue.equals(range)) {
-                    if (checkRange >= range) {
+                    if (range >= checkRange) {
                         return true;
                     }
                 } else {
@@ -113,7 +117,7 @@ public class IotSensorCombineView {
             } else {
                 checkRange = this.amount + this.normalValue;
                 if (!this.normalValue.equals(range)) {
-                    if (checkRange <= range) {
+                    if (range <= checkRange) {
                         return true;
                     }
                 } else {
