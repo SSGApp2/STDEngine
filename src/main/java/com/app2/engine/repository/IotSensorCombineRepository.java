@@ -12,6 +12,6 @@ public interface IotSensorCombineRepository extends JpaRepository<IotSensorCombi
     @Query("select o from IotSensorCombineView o where  o.isActiveCombine='Y' order by o.ouCode,o.deviceCode ")
     List<IotSensorCombineView> findByStatusActive();
 
-    @Query("select o from IotSensorCombineView o where  o.isActiveCombine='Y' and o.deviceCode =:deviceCode and o.ouCode=:ouCode order by o.ouCode,o.deviceCode ")
+    @Query("select o from IotSensorCombineView o where  o.isActiveCombine='Y' and o.deviceCode =:deviceCode and o.ouCode=:ouCode order by o.iotSensorCombine ")
     List<IotSensorCombineView> findByDeviceCodeAndOuCode(@Param("deviceCode") String deviceCode, @Param("ouCode") String ouCode);
 }

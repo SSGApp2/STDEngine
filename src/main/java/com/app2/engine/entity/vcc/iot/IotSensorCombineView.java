@@ -9,7 +9,10 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.LinkedList;
+import java.util.List;
 
 @Data
 @Entity
@@ -41,7 +44,7 @@ public class IotSensorCombineView {
 
     private String displayType;
 
-    private  String alertMessage;
+    private String alertMessage;
 
     private String alertType;
 
@@ -56,72 +59,134 @@ public class IotSensorCombineView {
     private String sensorCode;
 
 
-    public Boolean calculateCombineRange(Double range){
+    public Boolean calculateCombineRange(Double range) {
         Double checkRange = 0d;
-        if(this.valueType.equals("0")){
-            if(this.displayType.equals("A")){
+        if (this.valueType.equals("0")) {
+            if (this.displayType.equals("A")) {
                 checkRange = ((this.normalValue / 100) * this.amount) + this.normalValue;
-                if(checkRange >= range || checkRange <= range){
-                    return true;
+                if (!this.normalValue.equals(range)) {
+                    if (checkRange >= range || checkRange <= range) {
+                        return true;
+                    }
+                } else {
+                    return false;
                 }
-            }else if(this.equals("P")){
+            } else if (this.equals("P")) {
                 checkRange = ((this.normalValue / 100) * this.amount) + this.normalValue;
-                if(checkRange >= range){
-                    return true;
+                if (!this.normalValue.equals(range)) {
+                    if (checkRange >= range) {
+                        return true;
+                    }
+                } else {
+                    return false;
                 }
-            }else{
+            } else {
                 checkRange = ((this.normalValue / 100) * this.amount) + this.normalValue;
-                if(checkRange <= range){
-                    return true;
+                if (!this.normalValue.equals(range)) {
+                    if (checkRange <= range) {
+                        return true;
+                    }
+                } else {
+                    return false;
                 }
             }
 
-        }else{
-            if(this.displayType.equals("A")){
+        } else {
+            if (this.displayType.equals("A")) {
                 checkRange = this.amount + this.normalValue;
-                if(checkRange >= range || checkRange <= range){
-                    return true;
+                if (!this.normalValue.equals(range)) {
+                    if (checkRange >= range || checkRange <= range) {
+                        return true;
+                    }
+                } else {
+                    return false;
                 }
-            }else if(this.equals("P")){
+            } else if (this.equals("P")) {
                 checkRange = this.amount + this.normalValue;
-                if(checkRange >= range){
-                    return true;
+                if (!this.normalValue.equals(range)) {
+                    if (checkRange >= range) {
+                        return true;
+                    }
+                } else {
+                    return false;
                 }
-            }else{
+            } else {
                 checkRange = this.amount + this.normalValue;
-                if(checkRange <= range){
-                    return true;
+                if (!this.normalValue.equals(range)) {
+                    if (checkRange <= range) {
+                        return true;
+                    }
+                } else {
+                    return false;
                 }
             }
         }
         return false;
     }
 
-    public Boolean checkTimeLog(long timePresent, long timeLog){
-            long repeatTime;
-            long subTime = timePresent - timeLog;
-            if (this.repeatUnit.equals("H")) {
-                repeatTime =  (60*60*1000) * this.repeatAlert;
-                if(subTime >= repeatTime){
-                    return true;
-                }
-            } else if (this.repeatUnit.equals("M")) {
-                repeatTime =  (60*1000) * this.repeatAlert;
-                if(subTime >= repeatTime){
-                    return true;
-                }
-            } else {
-                repeatTime =  1000 * this.repeatAlert;
-                if(subTime >= repeatTime){
-                    return true;
-                }
+    public Boolean checkTimeLog(long timePresent, long timeLog) {
+        long repeatTime;
+        long subTime = timePresent - timeLog;
+        if (this.repeatUnit.equals("H")) {
+            repeatTime = (60 * 60 * 1000) * this.repeatAlert;
+            if (subTime >= repeatTime) {
+                return true;
             }
+        } else if (this.repeatUnit.equals("M")) {
+            repeatTime = (60 * 1000) * this.repeatAlert;
+            if (subTime >= repeatTime) {
+                return true;
+            }
+        } else {
+            repeatTime = 1000 * this.repeatAlert;
+            if (subTime >= repeatTime) {
+                return true;
+            }
+        }
 
         return false;
     }
 
-    public String alertTypeMessage(){
-        return this.alertType.equals("D")?"Danger":"Warning";
+    public String alertTypeMessage() {
+        return this.alertType.equals("D") ? "Danger" : "Warning";
+    }
+
+    public List<IotSensorCombine> groupByCombineId(List<IotSensorCombineView> iotSensorCombineView) {
+
+        if (!iotSensorCombineView.isEmpty()) {
+            Long idcombine = iotSensorCombineView.get(0).iotSensorCombine;
+            List<IotSensorCombineView> iotSensorCombineViews = new ArrayList<>();
+            List<IotSensorCombine> iotSensorCombines = new LinkedList<>();
+            IotSensorCombine iotSensorCombine = new IotSensorCombine();
+            for (int i = 0; i < iotSensorCombineView.size(); i++) {
+
+                if (idcombine == iotSensorCombineView.get(i).iotSensorCombine) {
+                    iotSensorCombineViews.add(iotSensorCombineView.get(i));
+                } else {
+                    //--Add---
+                    iotSensorCombine.setId(idcombine);
+                    iotSensorCombine.setIotSensorCombineViews(iotSensorCombineViews);
+                    iotSensorCombines.add(iotSensorCombine);
+                    //---Clear----
+                    idcombine = iotSensorCombineView.get(i).iotSensorCombine;
+                    iotSensorCombineViews = new ArrayList<>();
+                    iotSensorCombine = new IotSensorCombine();
+                    //--first-change--
+                    iotSensorCombineViews.add(iotSensorCombineView.get(i));
+                }
+                if (i == iotSensorCombineView.size() - 1) {
+                    //--Add---
+                    iotSensorCombine.setId(idcombine);
+                    iotSensorCombine.setIotSensorCombineViews(iotSensorCombineViews);
+                    iotSensorCombines.add(iotSensorCombine);
+                    //---Clear----
+                    idcombine = iotSensorCombineView.get(i).iotSensorCombine;
+                    iotSensorCombineViews = new ArrayList<>();
+                }
+            }
+            return iotSensorCombines;
+        }
+        return null;
     }
 
 }

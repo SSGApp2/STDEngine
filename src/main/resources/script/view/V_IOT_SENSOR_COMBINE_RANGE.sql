@@ -1,6 +1,7 @@
 CREATE
 or replace
-view v_iot_sensor_combine_range as select
+view v_iot_sensor_combine_range as
+select
 	a.*,
 	b.normal_value,
 	b.sensor_code,

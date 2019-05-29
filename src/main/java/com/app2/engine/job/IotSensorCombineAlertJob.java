@@ -1,7 +1,9 @@
 package com.app2.engine.job;
 
 import com.app2.engine.Service.linenotify.LineNotifyService;
+import com.app2.engine.constant.ServerConstant;
 import com.app2.engine.entity.model.MainSensorModel;
+import com.app2.engine.entity.vcc.iot.IotSensorCombine;
 import com.app2.engine.entity.vcc.iot.IotSensorCombineLog;
 import com.app2.engine.entity.vcc.iot.IotSensorCombineView;
 import com.app2.engine.repository.IotSensorCombineLogRepository;
@@ -19,7 +21,6 @@ import org.springframework.messaging.simp.stomp.StompSessionHandlerAdapter;
 import org.springframework.stereotype.Service;
 import org.springframework.util.concurrent.ListenableFutureCallback;
 import org.springframework.web.socket.messaging.WebSocketStompClient;
-import com.app2.engine.constant.ServerConstant;
 
 import java.lang.reflect.Type;
 import java.util.*;
@@ -43,7 +44,7 @@ public class IotSensorCombineAlertJob {
 
     public void startJob() {
         //initial
-        String socketURL= ServerConstant.WebSockerServer.replace("http://", "");
+        String socketURL = ServerConstant.WebSockerServer.replace("http://", "");
         stompClient.connect("ws://" + socketURL + "/ws", new StompSessionHandlerAdapter() {
 
             @Override
@@ -74,7 +75,7 @@ public class IotSensorCombineAlertJob {
 
             @Override
             public Type getPayloadType(StompHeaders headers) {
-                return  MainSensorModel.class;
+                return MainSensorModel.class;
             }
 
             @Override
@@ -90,71 +91,86 @@ public class IotSensorCombineAlertJob {
                 List<String> sensorCode = new ArrayList<>();
                 List<Double> valueSensor = new ArrayList<>();
                 List<IotSensorCombineView> iotSensorCombineView
-                        = iotSensorCombineRepository.findByDeviceCodeAndOuCode(deviceCode,ouCode);
-             if(!iotSensorCombineView.isEmpty() && iotSensorCombineView.size() != 0) {
-                 IotSensorCombineLog iotSensorCombineLog = iotSensorCombineLogRepository
-                         .findByIotSensorCombineId(iotSensorCombineView.get(0).getIotSensorCombine());
-                 if(iotSensorCombineLog != null) {
-                     timeLog = iotSensorCombineLog.getAlertTime().getTime();
-                     checkTimeAlert = iotSensorCombineView.get(0).checkTimeLog(stTime1, timeLog);
-                 }
-             }
-
-                 for (IotSensorCombineView iotSensorCombineRange : iotSensorCombineView) {
-
-                     if (iotSensorCombineRange.calculateCombineRange(mainSensorModel
-                             .getValueBySensorCode(iotSensorCombineRange.getSensorCode()))) {
-                         checkAlert = Boolean.TRUE;
-                         sensorCode.add(iotSensorCombineRange.getSensorCode());
-                         valueSensor.add(mainSensorModel.getValueBySensorCode(iotSensorCombineRange.getSensorCode()));
-                     } else {
-                         checkAlert = Boolean.FALSE;
-                         break;
-                     }
-                 }
-
-                if(!iotSensorCombineView.isEmpty() && iotSensorCombineView.size() != 0 && !checkAlert) {
-                    IotSensorCombineLog iotSensorCombineLog = iotSensorCombineLogRepository
-                            .findByIotSensorCombineId(iotSensorCombineView.get(0).getIotSensorCombine());
-                    if(iotSensorCombineLog != null) {
-                        iotSensorCombineLogRepository.delete(iotSensorCombineLog);
-                    }
-                }
-
-                if(checkAlert && checkTimeAlert){
-                    //ถึงเกณฑ์ที่ต้องเริ่มแจ้งเตือน
-                    String lineToken = iotSensorCombineView.get(0).getLineToken();
-                    String lineMessage = iotSensorCombineView.get(0).alertTypeMessage()+" "+ iotSensorCombineView.get(0).getAlertMessage() + "  ";
-                     for(int i=0;i<sensorCode.size();i++){
-                         lineMessage +=  sensorCode.get(i) + ":" +valueSensor.get(i) + " ";
-                     }
-
-                    Map<String, String> mapPostAlertJson = new HashMap<>();
-                    mapPostAlertJson.put("message", lineMessage);
-                    mapPostAlertJson.put("token", lineToken);
-                    mapPostAlertJson.put("iotSensorCombine", String.valueOf(iotSensorCombineView.get(0).getIotSensorCombine()));
+                        = iotSensorCombineRepository.findByDeviceCodeAndOuCode(deviceCode, ouCode);
+                if (!iotSensorCombineView.isEmpty() && iotSensorCombineView.size() != 0) {
 
 
-                    lineNotifyService.postAsyncMessageWithToken(gson.toJson(mapPostAlertJson)).addCallback(new ListenableFutureCallback<ResponseEntity<String>>() {
-                        @Override
-                        public void onFailure(Throwable throwable) {
-                            LOGGER.error("Error Line {}", throwable.getMessage(), throwable);
+                    List<IotSensorCombine> iotSensorCombines = iotSensorCombineView.get(0).groupByCombineId(iotSensorCombineView);
+
+                    for (IotSensorCombine iotSensorCombine : iotSensorCombines) {
+
+                        IotSensorCombineLog iotSensorCombineLog = iotSensorCombineLogRepository
+                                .findByIotSensorCombineId(iotSensorCombine.getId());
+
+                        if (iotSensorCombineLog != null) {
+                            timeLog = iotSensorCombineLog.getAlertTime().getTime();
+                            checkTimeAlert = iotSensorCombine.getIotSensorCombineViews().get(0).checkTimeLog(stTime1, timeLog);
                         }
 
-                        @Override
-                        public void onSuccess(ResponseEntity<String> stringResponseEntity) {
-                            Gson gson = new Gson();
-                            Map<String, String> mapping = gson.fromJson(stringResponseEntity.getBody(), Map.class);
-                            Long iotSensorCombine = Long.parseLong(mapping.get("iotSensorCombine"));
-                            IotSensorCombineLog iotSensorCombineLog = iotSensorCombineLogRepository.findByIotSensorCombineId(iotSensorCombine);
-                            if (BeanUtils.isNull(iotSensorCombineLog)) {
-                                iotSensorCombineLog = new IotSensorCombineLog();
+                        for (IotSensorCombineView iotSensorCombineView1 : iotSensorCombine.getIotSensorCombineViews()) {
+                            if (iotSensorCombineView1.calculateCombineRange(mainSensorModel.getValueBySensorCode(iotSensorCombineView1.getSensorCode()))) {
+                                checkAlert = Boolean.TRUE;
+                                sensorCode.add(iotSensorCombineView1.getSensorCode());
+                                valueSensor.add(mainSensorModel.getValueBySensorCode(iotSensorCombineView1.getSensorCode()));
+                            } else {
+                                checkAlert = Boolean.FALSE;
+                                sensorCode.clear();
+                                valueSensor.clear();
+                                break;
                             }
-                            iotSensorCombineLog.setAlertTime(new Date());
-                            iotSensorCombineLog.setIotSensorCombineId(iotSensorCombine);
-                            iotSensorCombineLogRepository.save(iotSensorCombineLog);
                         }
-                    });
+
+                        if (iotSensorCombineLog != null && !checkAlert) {
+                            iotSensorCombineLogRepository.delete(iotSensorCombineLog);
+                        }
+
+
+                        if (checkAlert && checkTimeAlert) {
+                            //ถึงเกณฑ์ที่ต้องเริ่มแจ้งเตือน
+                            String lineToken = iotSensorCombineView.get(0).getLineToken();
+                            String lineMessage = iotSensorCombineView.get(0).alertTypeMessage() + " " + iotSensorCombineView.get(0).getAlertMessage() + "  ";
+                            for (int i = 0; i < sensorCode.size(); i++) {
+                                lineMessage += sensorCode.get(i) + ":" + valueSensor.get(i) + " ";
+                            }
+
+                            Map<String, String> mapPostAlertJson = new HashMap<>();
+                            mapPostAlertJson.put("message", lineMessage);
+                            mapPostAlertJson.put("token", lineToken);
+                            mapPostAlertJson.put("iotSensorCombine", String.valueOf(iotSensorCombineView.get(0).getIotSensorCombine()));
+
+
+                            lineNotifyService.postAsyncMessageWithToken(gson.toJson(mapPostAlertJson)).addCallback(new ListenableFutureCallback<ResponseEntity<String>>() {
+                                @Override
+                                public void onFailure(Throwable throwable) {
+                                    LOGGER.error("Error Line {}", throwable.getMessage(), throwable);
+                                }
+
+                                @Override
+                                public void onSuccess(ResponseEntity<String> stringResponseEntity) {
+                                    Gson gson = new Gson();
+                                    Map<String, String> mapping = gson.fromJson(stringResponseEntity.getBody(), Map.class);
+                                    Long iotSensorCombine = Long.parseLong(mapping.get("iotSensorCombine"));
+                                    IotSensorCombineLog iotSensorCombineLog = iotSensorCombineLogRepository.findByIotSensorCombineId(iotSensorCombine);
+                                    if (BeanUtils.isNull(iotSensorCombineLog)) {
+                                        iotSensorCombineLog = new IotSensorCombineLog();
+                                    }
+                                    iotSensorCombineLog.setAlertTime(new Date());
+                                    iotSensorCombineLog.setIotSensorCombineId(iotSensorCombine);
+                                    iotSensorCombineLogRepository.save(iotSensorCombineLog);
+                                }
+                            });
+
+                            checkAlert = false;
+                            checkTimeAlert = true;
+                            sensorCode = new ArrayList<>();
+                            valueSensor = new ArrayList<>();
+                        } else {
+                            checkAlert = false;
+                            checkTimeAlert = true;
+                            sensorCode = new ArrayList<>();
+                            valueSensor = new ArrayList<>();
+                        }
+                    }
                 }
             }
         });
