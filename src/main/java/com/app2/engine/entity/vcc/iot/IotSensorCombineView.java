@@ -160,12 +160,13 @@ public class IotSensorCombineView {
 
         if (!iotSensorCombineView.isEmpty()) {
             Long idcombine = iotSensorCombineView.get(0).iotSensorCombine;
+            Long idcombine1;
             List<IotSensorCombineView> iotSensorCombineViews = new ArrayList<>();
             List<IotSensorCombine> iotSensorCombines = new LinkedList<>();
             IotSensorCombine iotSensorCombine = new IotSensorCombine();
             for (int i = 0; i < iotSensorCombineView.size(); i++) {
-
-                if (idcombine == iotSensorCombineView.get(i).iotSensorCombine) {
+                idcombine1 = iotSensorCombineView.get(i).iotSensorCombine;
+                if (idcombine.equals(idcombine1)) {
                     iotSensorCombineViews.add(iotSensorCombineView.get(i));
                 } else {
                     //--Add---
