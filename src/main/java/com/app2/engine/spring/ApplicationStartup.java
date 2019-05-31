@@ -45,7 +45,7 @@ public class ApplicationStartup implements ApplicationListener<ApplicationReadyE
         ServerConstant.WebSockerServer = parameterDetailRepositoryCustom.findByParameterCodeAndParameterValue1("50", "VCCWebSocketServer").getParameterValue2();
         sensorAlertJob.startJob();
         sensorAlertJobRepeat.startJob();
-        mongodbExampleData.startJob();
+//        mongodbExampleData.startJob();
         iotSensorCombineAlertJob.startJob();
     }
 
