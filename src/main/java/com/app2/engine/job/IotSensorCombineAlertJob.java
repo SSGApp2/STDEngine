@@ -98,7 +98,6 @@ public class IotSensorCombineAlertJob {
                     List<IotSensorCombine> iotSensorCombines = iotSensorCombineView.get(0).groupByCombineId(iotSensorCombineView);
 
                     for (IotSensorCombine iotSensorCombine : iotSensorCombines) {
-
                         IotSensorCombineLog iotSensorCombineLog = iotSensorCombineLogRepository
                                 .findByIotSensorCombineId(iotSensorCombine.getId());
 
@@ -136,7 +135,7 @@ public class IotSensorCombineAlertJob {
                             Map<String, String> mapPostAlertJson = new HashMap<>();
                             mapPostAlertJson.put("message", lineMessage);
                             mapPostAlertJson.put("token", lineToken);
-                            mapPostAlertJson.put("iotSensorCombine", String.valueOf(iotSensorCombineView.get(0).getIotSensorCombine()));
+                            mapPostAlertJson.put("iotSensorCombine", String.valueOf(iotSensorCombine.getId()));
 
 
                             lineNotifyService.postAsyncMessageWithToken(gson.toJson(mapPostAlertJson)).addCallback(new ListenableFutureCallback<ResponseEntity<String>>() {
