@@ -86,8 +86,8 @@ public class IotSensorCombineAlertJob {
                 String deviceCode = mainSensorModel.getDeviceName();
                 String ouCode = mainSensorModel.getOuCode();
                 Gson gson = new Gson();
-                Boolean checkAlert = false;
-                Boolean checkTimeAlert = true;
+                Boolean checkAlert = Boolean.FALSE;
+                Boolean checkTimeAlert = Boolean.TRUE;
                 List<String> sensorCode = new ArrayList<>();
                 List<Double> valueSensor = new ArrayList<>();
                 List<IotSensorCombineView> iotSensorCombineView
@@ -119,12 +119,12 @@ public class IotSensorCombineAlertJob {
                             }
                         }
 
-                        if (iotSensorCombineLog != null && !checkAlert) {
+                        if (iotSensorCombineLog != null && checkAlert.equals(Boolean.FALSE)) {
                             iotSensorCombineLogRepository.delete(iotSensorCombineLog);
                         }
 
 
-                        if (checkAlert && checkTimeAlert) {
+                        if (checkAlert.equals(Boolean.TRUE) && checkTimeAlert.equals(Boolean.TRUE)) {
                             //ถึงเกณฑ์ที่ต้องเริ่มแจ้งเตือน
                             String lineToken = iotSensorCombineView.get(0).getLineToken();
                             String lineMessage = iotSensorCombineView.get(0).alertTypeMessage() + " " + iotSensorCombineView.get(0).getAlertMessage() + "  ";
@@ -159,13 +159,13 @@ public class IotSensorCombineAlertJob {
                                 }
                             });
 
-                            checkAlert = false;
-                            checkTimeAlert = true;
+                            checkAlert = Boolean.FALSE;
+                            checkTimeAlert = Boolean.TRUE;
                             sensorCode = new ArrayList<>();
                             valueSensor = new ArrayList<>();
                         } else {
-                            checkAlert = false;
-                            checkTimeAlert = true;
+                            checkAlert = Boolean.FALSE;
+                            checkTimeAlert = Boolean.TRUE;
                             sensorCode = new ArrayList<>();
                             valueSensor = new ArrayList<>();
                         }
