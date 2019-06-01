@@ -66,31 +66,31 @@ public class IotSensorCombineView {
                 checkRange = ((this.normalValue / 100) * this.amount);
                 if (!this.normalValue.equals(range)) {
                     if (range >= (checkRange+this.normalValue)) {
-                        return true;
+                        return Boolean.TRUE;
                     } else if (range <= (this.normalValue - checkRange)) {
-                        return true;
+                        return Boolean.TRUE;
                     }
                 } else {
-                    return false;
+                    return Boolean.TRUE;
                 }
             } else if (this.equals("P")) {
                 checkRange = ((this.normalValue / 100) * this.amount) + this.normalValue;
                 if (!this.normalValue.equals(range)) {
                     if (range >= checkRange) {
-                        return true;
+                        return Boolean.TRUE;
                     }
                 } else {
-                    return false;
+                    return Boolean.FALSE;
                 }
             } else  if(this.equals("N")){
                 checkRange = ((this.normalValue / 100) * this.amount) + this.normalValue;
                 checkRange = this.normalValue - checkRange;
                 if (!this.normalValue.equals(range)) {
                     if (range <= checkRange) {
-                        return true;
+                        return Boolean.TRUE;
                     }
                 } else {
-                    return false;
+                    return Boolean.FALSE;
                 }
             }
 
@@ -99,34 +99,34 @@ public class IotSensorCombineView {
                 checkRange = this.amount + this.normalValue;
                 if (!this.normalValue.equals(range)) {
                     if (range >= checkRange) {
-                        return true;
+                        return Boolean.TRUE;
                     } else if (range <= (this.normalValue - this.amount)) {
-                        return true;
+                        return Boolean.TRUE;
                     }
                 } else {
-                    return false;
+                    return Boolean.FALSE;
                 }
             } else if (this.equals("P")) {
                 checkRange = this.amount + this.normalValue;
                 if (!this.normalValue.equals(range)) {
                     if (range >= checkRange) {
-                        return true;
+                        return Boolean.TRUE;
                     }
                 } else {
-                    return false;
+                    return Boolean.FALSE;
                 }
             } else if(this.equals("N")) {
                 checkRange = this.normalValue - this.amount;
                 if (!this.normalValue.equals(range)) {
                     if (range <= checkRange) {
-                        return true;
+                        return Boolean.TRUE;
                     }
                 } else {
-                    return false;
+                    return Boolean.FALSE;
                 }
             }
         }
-        return false;
+        return Boolean.FALSE;
     }
 
     public Boolean checkTimeLog(long timePresent, long timeLog) {
@@ -135,21 +135,21 @@ public class IotSensorCombineView {
         if (this.repeatUnit.equals("H")) {
             repeatTime = (60 * 60 * 1000) * this.repeatAlert;
             if (subTime >= repeatTime) {
-                return true;
+                return Boolean.TRUE;
             }
         } else if (this.repeatUnit.equals("M")) {
             repeatTime = (60 * 1000) * this.repeatAlert;
             if (subTime >= repeatTime) {
-                return true;
+                return Boolean.TRUE;
             }
         } else {
             repeatTime = 1000 * this.repeatAlert;
             if (subTime >= repeatTime) {
-                return true;
+                return Boolean.TRUE;
             }
         }
 
-        return false;
+        return Boolean.FALSE;
     }
 
     public String alertTypeMessage() {
