@@ -1,5 +1,6 @@
 package com.app2.engine.entity.vcc.iot;
 
+import com.app2.engine.util.BeanUtils;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.hibernate.annotations.Immutable;
@@ -195,4 +196,40 @@ public class IotSensorCombineView {
         return null;
     }
 
+
+
+    public String getSensorStatus(Double currentValue) {
+        Double alertValue = null;
+        String message = null;
+
+        if (String.valueOf(this.valueType).equals("0")) {
+            //Percent
+            if (BeanUtils.isNotNull(this.amount)) {
+                alertValue = (this.amount/ 100D * this.normalValue);
+            }
+
+        } else {
+            //Amount
+            if (BeanUtils.isNotNull(this.amount)) {
+                alertValue = this.amount;
+            }
+        }
+
+        if ("N".equals(this.displayType)) {
+            if (BeanUtils.isNotNull(alertValue) && (currentValue <= this.normalValue - alertValue)) {
+                message = "danger";
+            }
+        } else if ("P".equals(displayType)) {
+            if (BeanUtils.isNotNull(alertValue) && (currentValue >= this.normalValue + alertValue)) {
+                message = "danger";
+            }
+        } else {
+            if (BeanUtils.isNotNull(alertValue) && (currentValue <= this.normalValue - alertValue)) {
+                message = "danger";
+            } else if (BeanUtils.isNotNull(alertValue) && (currentValue >= this.normalValue + alertValue)) {
+                message = "danger";
+            }
+        }
+        return message;
+    }
 }

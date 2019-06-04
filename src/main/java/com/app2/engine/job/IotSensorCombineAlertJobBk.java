@@ -12,8 +12,6 @@ import com.app2.engine.util.BeanUtils;
 import com.google.gson.Gson;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.joda.time.DateTime;
-import org.joda.time.Duration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.messaging.simp.stomp.StompCommand;
@@ -28,9 +26,9 @@ import java.lang.reflect.Type;
 import java.util.*;
 
 @Service
-public class IotSensorCombineAlertJob {
+public class IotSensorCombineAlertJobBk {
 
-    private static final Logger LOGGER = LogManager.getLogger(IotSensorCombineAlertJob.class);
+    private static final Logger LOGGER = LogManager.getLogger(IotSensorCombineAlertJobBk.class);
 
     @Autowired
     WebSocketStompClient stompClient;
@@ -90,74 +88,53 @@ public class IotSensorCombineAlertJob {
                 Gson gson = new Gson();
                 Boolean checkAlert = Boolean.FALSE;
                 Boolean checkTimeAlert = Boolean.TRUE;
-                DateTime currentTime = new DateTime();
-
+                List<String> sensorCode = new ArrayList<>();
+                List<Double> valueSensor = new ArrayList<>();
                 List<IotSensorCombineView> iotSensorCombineView = iotSensorCombineRepository.findByDeviceCodeAndOuCode(deviceCode, ouCode);
-                if (iotSensorCombineView.size() > 0) {
+                if (!iotSensorCombineView.isEmpty() && iotSensorCombineView.size() != 0) {
+
+
                     List<IotSensorCombine> iotSensorCombines = iotSensorCombineView.get(0).groupByCombineId(iotSensorCombineView);
+
                     for (IotSensorCombine iotSensorCombine : iotSensorCombines) {
-                        IotSensorCombineLog iotSensorRangeCombineLog = iotSensorCombineLogRepository.findByIotSensorCombineId(iotSensorCombine.getId());
-                        boolean isAlert = false;
-                        boolean isRepeat = false;
-                        /***************************************/
-                        String totalStatus = null; //D / W
-                        String repeatTime = null;
-                        /*************************************/
-                        List<String> sensorCodeList = new ArrayList<>();
-                        List<Double> valueSensorList = new ArrayList<>();
+                        IotSensorCombineLog iotSensorCombineLog = iotSensorCombineLogRepository
+                                .findByIotSensorCombineId(iotSensorCombine.getId());
 
-                        for (IotSensorCombineView detail : iotSensorCombine.getIotSensorCombineViews()) {
-                            totalStatus = detail.getAlertType();
-                            repeatTime = detail.getRepeatAlert() + "#" + detail.getRepeatUnit();
-                            String sensorCode = detail.getSensorCode();
-                            Double currentValue = mainSensorModel.getValueBySensorCode(sensorCode);
-                            LOGGER.debug("sensorCode : {}",sensorCode);
-                            LOGGER.debug("deviceCode : {}",deviceCode);
-                            LOGGER.debug("iotSensorCombine ID : {}",iotSensorCombine.getId());
-                            String sensorStatus = detail.getSensorStatus(currentValue);
-                            LOGGER.debug("sensorCode : {} Status : {} ", sensorCode, sensorStatus);
+                        if (iotSensorCombineLog != null) {
+                            timeLog = iotSensorCombineLog.getAlertTime().getTime();
+                            checkTimeAlert = iotSensorCombine.getIotSensorCombineViews().get(0).checkTimeLog(stTime1, timeLog);
+                        }
 
-                            if (BeanUtils.isNotNull(sensorStatus)) {
-                                isAlert = true;
-                                sensorCodeList.add(sensorCode);
-                                valueSensorList.add(currentValue);
+                        for (IotSensorCombineView iotSensorCombineView1 : iotSensorCombine.getIotSensorCombineViews()) {
+                            if (iotSensorCombineView1.calculateCombineRange(mainSensorModel.getValueBySensorCode(iotSensorCombineView1.getSensorCode()))) {
+                                checkAlert = Boolean.TRUE;
+                                sensorCode.add(iotSensorCombineView1.getSensorCode());
+                                valueSensor.add(mainSensorModel.getValueBySensorCode(iotSensorCombineView1.getSensorCode()));
                             } else {
-                                isAlert = false;
+                                checkAlert = Boolean.FALSE;
+                                sensorCode.clear();
+                                valueSensor.clear();
                                 break;
                             }
-
                         }
-                        /////////////////////////////////////////////////////////////////////////
-                        if (isAlert) {
-                            LOGGER.debug("totalStatus {}", totalStatus);
-                            LOGGER.debug("repeatTime {}", repeatTime);
-                            if (BeanUtils.isNotNull(repeatTime) && BeanUtils.isNotNull(iotSensorRangeCombineLog)) {
-                                //มีการ set repeat
-                                Integer timeAlert = Integer.parseInt(repeatTime.split("#")[0]);
-                                String timeAlertUnit = repeatTime.split("#")[1];
-                                Boolean isRepeatTime = isTimeRepeat(timeAlert, timeAlertUnit, currentTime.toDate(), iotSensorRangeCombineLog.getAlertTime());
-                                if (timeAlertUnit.equals("H")) {
-                                    LOGGER.debug("Alert every : " + timeAlert + " hours");
-                                } else if (timeAlertUnit.equals("M")) {
-                                    LOGGER.debug("Alert every : " + timeAlert + " minutes");
-                                } else if (timeAlertUnit.equals("S")) {
-                                    LOGGER.debug("Alert every : " + timeAlert + " seconds");
-                                }
-                                if (isRepeatTime == false) {
-                                    continue;
-                                }
-                            }
+
+                        if (iotSensorCombineLog != null && checkAlert.equals(Boolean.FALSE)) {
+                            iotSensorCombineLogRepository.delete(iotSensorCombineLog);
+                        }
+
+
+                        if (checkAlert.equals(Boolean.TRUE) && checkTimeAlert.equals(Boolean.TRUE)) {
                             //ถึงเกณฑ์ที่ต้องเริ่มแจ้งเตือน
                             String lineToken = iotSensorCombineView.get(0).getLineToken();
                             String lineMessage = iotSensorCombineView.get(0).alertTypeMessage() + " " + iotSensorCombineView.get(0).getAlertMessage() + "  ";
-                            for (int i = 0; i < sensorCodeList.size(); i++) {
-                                lineMessage += sensorCodeList.get(i) + ":" + valueSensorList.get(i) + " ";
+                            for (int i = 0; i < sensorCode.size(); i++) {
+                                lineMessage += sensorCode.get(i) + ":" + valueSensor.get(i) + " ";
                             }
+
                             Map<String, String> mapPostAlertJson = new HashMap<>();
                             mapPostAlertJson.put("message", lineMessage);
                             mapPostAlertJson.put("token", lineToken);
                             mapPostAlertJson.put("iotSensorCombine", String.valueOf(iotSensorCombine.getId()));
-                            LOGGER.debug("Send Message {}", lineMessage);
 
 
                             lineNotifyService.postAsyncMessageWithToken(gson.toJson(mapPostAlertJson)).addCallback(new ListenableFutureCallback<ResponseEntity<String>>() {
@@ -181,34 +158,19 @@ public class IotSensorCombineAlertJob {
                                 }
                             });
 
+                            checkAlert = Boolean.FALSE;
+                            checkTimeAlert = Boolean.TRUE;
+                            sensorCode = new ArrayList<>();
+                            valueSensor = new ArrayList<>();
                         } else {
-                            //ไม่เข้าเงื่อนไข
-                            if (BeanUtils.isNotNull(iotSensorRangeCombineLog)) {
-                                iotSensorCombineLogRepository.delete(iotSensorRangeCombineLog);
-                            }
+                            checkAlert = Boolean.FALSE;
+                            checkTimeAlert = Boolean.TRUE;
+                            sensorCode = new ArrayList<>();
+                            valueSensor = new ArrayList<>();
                         }
                     }
                 }
             }
         });
     }
-
-    private Boolean isTimeRepeat(Integer timeAlert, String timeAlertUnit, Date currentTime, Date lastAlert) {
-        //Calc Diff Time
-        Duration duration = new Duration(new DateTime(lastAlert), new DateTime(currentTime));
-        Boolean validateAlert = false;
-        LOGGER.debug("Diff Hours   : {}", duration.getStandardHours());
-        LOGGER.debug("Diff Min     : {}", duration.getStandardMinutes());
-        LOGGER.debug("Diff Sec     : {}", duration.getStandardSeconds());
-        if (timeAlertUnit.equals("H") && duration.getStandardHours() >= timeAlert) {
-            validateAlert = true;
-        } else if (timeAlertUnit.equals("M") && duration.getStandardMinutes() >= timeAlert) {
-            validateAlert = true;
-        } else if (timeAlertUnit.equals("S") && duration.getStandardSeconds() >= timeAlert) {
-            validateAlert = true;
-        }
-        LOGGER.debug("ยังไม่ถึงรอบแจ้งเตือน");
-        return validateAlert;
-    }
 }
-        
