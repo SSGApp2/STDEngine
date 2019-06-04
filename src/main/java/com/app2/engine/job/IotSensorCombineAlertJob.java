@@ -102,6 +102,9 @@ public class IotSensorCombineAlertJob {
                         /***************************************/
                         String totalStatus = null; //D / W
                         String repeatTime = null;
+                        String lineToken=null;
+                        String alertTypeMessage=null;
+                        String alertMessage=null;
                         /*************************************/
                         List<String> sensorCodeList = new ArrayList<>();
                         List<Double> valueSensorList = new ArrayList<>();
@@ -109,8 +112,13 @@ public class IotSensorCombineAlertJob {
                         for (IotSensorCombineView detail : iotSensorCombine.getIotSensorCombineViews()) {
                             totalStatus = detail.getAlertType();
                             repeatTime = detail.getRepeatAlert() + "#" + detail.getRepeatUnit();
+                            alertTypeMessage=detail.alertTypeMessage();
+                            lineToken=detail.getLineToken();
+                            alertMessage=detail.getAlertMessage();
                             String sensorCode = detail.getSensorCode();
                             Double currentValue = mainSensorModel.getValueBySensorCode(sensorCode);
+
+
                             LOGGER.debug("sensorCode : {}",sensorCode);
                             LOGGER.debug("deviceCode : {}",deviceCode);
                             LOGGER.debug("iotSensorCombine ID : {}",iotSensorCombine.getId());
@@ -148,8 +156,7 @@ public class IotSensorCombineAlertJob {
                                 }
                             }
                             //ถึงเกณฑ์ที่ต้องเริ่มแจ้งเตือน
-                            String lineToken = iotSensorCombineView.get(0).getLineToken();
-                            String lineMessage = iotSensorCombineView.get(0).alertTypeMessage() + " " + iotSensorCombineView.get(0).getAlertMessage() + "  ";
+                            String lineMessage = alertTypeMessage + " " + alertMessage + "  ";
                             for (int i = 0; i < sensorCodeList.size(); i++) {
                                 lineMessage += sensorCodeList.get(i) + ":" + valueSensorList.get(i) + " ";
                             }

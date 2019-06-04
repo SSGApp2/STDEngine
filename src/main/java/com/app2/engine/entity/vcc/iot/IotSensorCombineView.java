@@ -175,6 +175,7 @@ public class IotSensorCombineView {
                     mapCombine.put(idcombine1, header);
                 }
                 header = mapCombine.get(idcombine1);
+                header.setId(idcombine1);
                 detail = header.getIotSensorCombineViews();
                 detail.add(iotSensorCombineView.get(i));
                 header.setIotSensorCombineViews(detail);
