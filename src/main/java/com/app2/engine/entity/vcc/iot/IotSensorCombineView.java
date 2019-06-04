@@ -10,10 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 @Data
 @Entity
@@ -66,7 +63,7 @@ public class IotSensorCombineView {
             if (this.displayType.equals("A")) {
                 checkRange = ((this.normalValue / 100) * this.amount);
                 if (!this.normalValue.equals(range)) {
-                    if (range >= (checkRange+this.normalValue)) {
+                    if (range >= (checkRange + this.normalValue)) {
                         return Boolean.TRUE;
                     } else if (range <= (this.normalValue - checkRange)) {
                         return Boolean.TRUE;
@@ -83,7 +80,7 @@ public class IotSensorCombineView {
                 } else {
                     return Boolean.FALSE;
                 }
-            } else  if(this.equals("N")){
+            } else if (this.equals("N")) {
                 checkRange = ((this.normalValue / 100) * this.amount) + this.normalValue;
                 checkRange = this.normalValue - checkRange;
                 if (!this.normalValue.equals(range)) {
@@ -116,7 +113,7 @@ public class IotSensorCombineView {
                 } else {
                     return Boolean.FALSE;
                 }
-            } else if(this.equals("N")) {
+            } else if (this.equals("N")) {
                 checkRange = this.normalValue - this.amount;
                 if (!this.normalValue.equals(range)) {
                     if (range <= checkRange) {
@@ -161,41 +158,35 @@ public class IotSensorCombineView {
 
         if (!iotSensorCombineView.isEmpty()) {
             Long idcombine = iotSensorCombineView.get(0).iotSensorCombine;
-            Long idcombine1;
-            List<IotSensorCombineView> iotSensorCombineViews = new ArrayList<>();
-            List<IotSensorCombine> iotSensorCombines = new LinkedList<>();
-            IotSensorCombine iotSensorCombine = new IotSensorCombine();
+//            String deviceCode=iotSensorCombineView.get(0).getDeviceCode();
+//            if(deviceCode.equals("XDK002")){
+//                deviceCode.hashCode();
+//            }
+            List<IotSensorCombine> iotSensorCombines = new LinkedList<>(); //header
+            Map<Long, IotSensorCombine> mapCombine = new HashMap<>();
+
             for (int i = 0; i < iotSensorCombineView.size(); i++) {
-                idcombine1 = iotSensorCombineView.get(i).iotSensorCombine;
-                if (idcombine.equals(idcombine1)) {
-                    iotSensorCombineViews.add(iotSensorCombineView.get(i));
-                } else {
-                    //--Add---
-                    iotSensorCombine.setId(idcombine);
-                    iotSensorCombine.setIotSensorCombineViews(iotSensorCombineViews);
-                    iotSensorCombines.add(iotSensorCombine);
-                    //---Clear----
-                    idcombine = iotSensorCombineView.get(i).iotSensorCombine;
-                    iotSensorCombineViews = new ArrayList<>();
-                    iotSensorCombine = new IotSensorCombine();
-                    //--first-change--
-                    iotSensorCombineViews.add(iotSensorCombineView.get(i));
+                Long idcombine1 = iotSensorCombineView.get(i).iotSensorCombine;
+                IotSensorCombine header = new IotSensorCombine();
+                List<IotSensorCombineView> detail = new ArrayList<>();
+
+                if (mapCombine.containsKey(idcombine1) == false) {
+                    header.setIotSensorCombineViews(detail);
+                    mapCombine.put(idcombine1, header);
                 }
-                if (i == iotSensorCombineView.size() - 1) {
-                    //--Add---
-                    iotSensorCombine.setId(idcombine);
-                    iotSensorCombine.setIotSensorCombineViews(iotSensorCombineViews);
-                    iotSensorCombines.add(iotSensorCombine);
-                    //---Clear----
-                    idcombine = iotSensorCombineView.get(i).iotSensorCombine;
-                    iotSensorCombineViews = new ArrayList<>();
-                }
+                header = mapCombine.get(idcombine1);
+                detail = header.getIotSensorCombineViews();
+                detail.add(iotSensorCombineView.get(i));
+                header.setIotSensorCombineViews(detail);
+                mapCombine.put(idcombine1, header);
+            }
+            for(Map.Entry<Long, IotSensorCombine> map :mapCombine.entrySet()){
+                iotSensorCombines.add(map.getValue());
             }
             return iotSensorCombines;
         }
         return null;
     }
-
 
 
     public String getSensorStatus(Double currentValue) {
@@ -205,7 +196,7 @@ public class IotSensorCombineView {
         if (String.valueOf(this.valueType).equals("0")) {
             //Percent
             if (BeanUtils.isNotNull(this.amount)) {
-                alertValue = (this.amount/ 100D * this.normalValue);
+                alertValue = (this.amount / 100D * this.normalValue);
             }
 
         } else {
