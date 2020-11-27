@@ -1,17 +1,16 @@
 package com.app2.engine.spring;
 
 import com.app2.engine.repository.AppParameterRepository;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+@Log4j2
 @Component
 public class ApplicationStartup implements ApplicationListener<ApplicationReadyEvent> {
-    private static final Logger LOGGER = LogManager.getLogger(ApplicationStartup.class);
 
     @Autowired
     private AppParameterRepository appParameterRepository;
@@ -19,10 +18,9 @@ public class ApplicationStartup implements ApplicationListener<ApplicationReadyE
     @Override
     @Transactional
     public void onApplicationEvent(ApplicationReadyEvent applicationReadyEvent) {
-        LOGGER.info("ApplicationStartup.....!");
-        LOGGER.info("Swagger UI : /swagger-ui.html");
-        LOGGER.info("Spring Data REST : /rest-api");
-
+        log.info("ApplicationStartup.....!");
+        log.info("Swagger UI : /swagger-ui.html");
+        log.info("Spring Data REST : /rest-api");
 //        AppParameter appParameterConfig = appParameterRepository.findByCode("50");//example
     }
 

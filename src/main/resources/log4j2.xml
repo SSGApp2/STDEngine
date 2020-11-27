@@ -1,15 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration>
+
+    <Properties>
+        <Property name="PID">????</Property>
+        <!--<Property name="LOG_PATTERN">%clr{%d{yyyy-MM-dd HH:mm:ss.SSS}}{faint} %clr{%5p} %clr{${sys:PID}}{magenta} %clr{-&#45;&#45;}{faint} %clr{[%15.15t]}{faint} %clr{%-40.40c{1.}}{cyan} %clr{:}{faint} (%F:%L) - %m%n%wEx</Property>-->
+        <Property name="LOG_PATTERN">%clr{%d}{faint} %clr{%5p} [%t] %clr{[%X{req_id}]}{red} %clr{[%X{Role}-%X{Username}]}{magenta} %C{2} (%F:%L) %clr{-}{faint} %m%n</Property>
+    </Properties>
+
     <Appenders>
         <!-- Console Appender -->
-        <Console name="Console" target="SYSTEM_OUT">
-            <PatternLayout pattern="%d{yyyy-MMM-dd HH:mm:ss a} [%t] %-5level %logger{36} - %msg%n" />
+        <Console name="Console" target="SYSTEM_OUT" follow="true">
+            <PatternLayout pattern="${LOG_PATTERN}" charset="UTF-8"/>
         </Console>
         <!-- File Appender -->
-        <File name="File" fileName="logfile.log">
-            <PatternLayout pattern="%d{yyyy-MMM-dd HH:mm:ss a} [%t] %-5level %logger{36} - %msg%n" />
-        </File>
-
+        <RollingFile name="ENGINE" fileName="${sys:java.io.tmpdir}/GSBEngine.log"
+                     filePattern="${sys:java.io.tmpdir}/$${date:yyyy-MM}/GSBEngine-%d{yyyy-MM-dd}-%i.log.gz">
+            <PatternLayout pattern="${LOG_PATTERN}" charset="UTF-8"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy /><!-- Rotated everyday -->
+                <SizeBasedTriggeringPolicy size="30 MB"/> <!-- Or every 100 MB -->
+            </Policies>
+            <DefaultRolloverStrategy max="20"/>
+        </RollingFile>
     </Appenders>
 
     <Loggers>
@@ -17,26 +29,26 @@
         <!-- Log everything in custom package -->
         <Logger name="com.app2.engine" level="debug" additivity="false">
             <AppenderRef ref="Console" />
-            <AppenderRef ref="File" />
+            <AppenderRef ref="ENGINE" />
         </Logger>
 
 
         <!-- Log SQL statements -->
         <Logger name="org.hibernate.SQL" level="off" additivity="false">
             <AppenderRef ref="Console" />
-            <AppenderRef ref="File" />
+            <AppenderRef ref="ENGINE" />
         </Logger>
 
         <!-- Log JDBC bind parameters -->
         <Logger name="org.hibernate.type.descriptor.sql" level="off" additivity="false">
             <AppenderRef ref="Console" />
-            <AppenderRef ref="File" />
+            <AppenderRef ref="ENGINE" />
         </Logger>
 
 
         <Root level="error">
             <AppenderRef ref="Console" />
-            <AppenderRef ref="File" />
+            <AppenderRef ref="ENGINE" />
         </Root>
 
     </Loggers>
