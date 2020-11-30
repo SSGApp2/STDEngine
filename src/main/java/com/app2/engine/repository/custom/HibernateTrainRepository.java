@@ -1,6 +1,12 @@
 package com.app2.engine.repository.custom;
 
+import com.app2.engine.entity.app.Employee;
+import com.app2.engine.repository.EmployeeRepository;
 import lombok.extern.slf4j.Slf4j;
+import org.hibernate.Criteria;
+import org.hibernate.Session;
+import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -8,6 +14,7 @@ import org.springframework.stereotype.Repository;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import java.util.List;
 
 @Slf4j
 @Repository
@@ -19,6 +26,8 @@ public class HibernateTrainRepository {
     @Autowired
     JdbcTemplate jdbcTemplate;
 
+    @Autowired
+    EmployeeRepository employeeRepository;
 
     public void jdbcUpdate() {
         //https://www.netjstech.com/2016/11/insert-update-using-jdbctemplate-in-spring-framework.html
@@ -31,6 +40,23 @@ public class HibernateTrainRepository {
 
     public void criteriaTutorial() { //easy
         //https://howtodoinjava.com/hibernate/hibernate-criteria-queries-tutorial/
+    }
+
+    public Employee insertEmployee(String name, String lName, String empCode) {
+        Employee employee = new Employee();
+        employee.setThaiName(name);
+        employee.setThaiLastName(lName);
+        employee.setEmpCode(empCode);
+        employeeRepository.save(employee);
+        return employee;
+    }
+
+    public Employee findByEmpCode(String empCode) {
+        Criteria criteria = ((Session) entityManager.getDelegate()).createCriteria(Employee.class);
+        criteria.add(Restrictions.eq("empCode",empCode));
+        List<Employee> employeeList = criteria.list();
+        log.debug("Emp size {}",employeeList.size());
+        return null;
     }
 
     public void jpaTutorial() {

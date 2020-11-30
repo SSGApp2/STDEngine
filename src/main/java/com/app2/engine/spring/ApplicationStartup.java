@@ -1,6 +1,5 @@
 package com.app2.engine.spring;
 
-import com.app2.engine.repository.AppParameterRepository;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
@@ -11,9 +10,6 @@ import org.springframework.transaction.annotation.Transactional;
 @Log4j2
 @Component
 public class ApplicationStartup implements ApplicationListener<ApplicationReadyEvent> {
-
-    @Autowired
-    private AppParameterRepository appParameterRepository;
 
     @Override
     @Transactional
