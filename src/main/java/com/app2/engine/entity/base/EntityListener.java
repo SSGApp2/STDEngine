@@ -21,7 +21,7 @@ import java.util.Date;
 @Component
 public class EntityListener {
     private static AuthorizeUtil authorizeUtil;
-
+    //chaichana
     @Autowired
     public void setAuthorizeUtil(AuthorizeUtil service) {
         this.authorizeUtil = service;

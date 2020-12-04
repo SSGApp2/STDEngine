@@ -15,7 +15,7 @@ import javax.validation.constraints.NotNull;
 @Entity
 @EqualsAndHashCode(of = {"id"})
 public class ParameterDetail extends BaseEntity {
-
+    //chaichana
     @NotNull
     private String code;
 

@@ -18,7 +18,7 @@ public class HibernateTrainRepository {
 
     @Autowired
     JdbcTemplate jdbcTemplate;
-
+    //chaichana
 
     public void jdbcUpdate() {
         //https://www.netjstech.com/2016/11/insert-update-using-jdbctemplate-in-spring-framework.html

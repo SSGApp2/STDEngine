@@ -13,7 +13,7 @@ import java.util.Set;
 @Entity
 @EqualsAndHashCode(of = {"id"})
 public class AppParameter extends BaseEntity {
-
+    //chaichana
     @NotNull
     @Column(unique = true)
     private String code;
