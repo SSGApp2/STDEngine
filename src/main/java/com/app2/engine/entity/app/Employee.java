@@ -1,16 +1,15 @@
 package com.app2.engine.entity.app;
 
+import com.app2.engine.entity.base.BaseEntity;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import javax.persistence.*;
 
 @Entity
 @Data
-public class Employee {
+public class Employee extends BaseEntity {
 
-    @Id
-    @GeneratedValue
-    private Long id;
     private String thaiName;
     private String thaiLastName;
     private String empCode;

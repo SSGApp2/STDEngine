@@ -1,6 +1,7 @@
 package com.app2.engine.entity.base;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -10,6 +11,7 @@ import java.util.Date;
 
 @Data
 @MappedSuperclass
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
 public abstract class BaseEntity implements Serializable {
 
     @Id
