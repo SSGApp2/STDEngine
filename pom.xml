@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.app2</groupId>
-	<artifactId>engine</artifactId>
+	<artifactId>STDEngine</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>engine</name>
+	<name>STDEngine</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -76,18 +76,18 @@
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger-ui</artifactId>
-			<version>2.6.1</version>
+			<version>2.9.2</version>
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger2</artifactId>
-			<version>2.6.1</version>
+			<version>2.9.2</version>
 		</dependency>
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-data-rest</artifactId>
-			<version>2.6.1</version>
+			<version>2.9.2</version>
 		</dependency>
 
 		<!--Spring boot admin client-->
